@@ -1,150 +1,216 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Levi Hekman — Junior Cybersecurity Professional. Penetration tester and vulnerability analyst based in the Netherlands.">
   <title>Levi Hekman | Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <script defer src="scripts.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-    <!-- Top utility bar -->
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <div class="topbar-right">
-          <a href="#contact" class="topbar-link">Contact</a>
-          <span class="topbar-sep">•</span>
-          <button class="topbar-link" type="button">EN</button>
-          <span class="topbar-sep">•</span>
-          <a href="#login" class="topbar-link">Log in</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-brand">LH_PORTFOLIO</span>
+    <div class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#tooling">Tooling</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Let's Talk →</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-text fade-up">
+        <p class="eyebrow">Junior Cybersecurity Professional</p>
+        <h1>Levi<br><span class="accent">Hekman</span></h1>
+        <p class="hero-sub">Penetration tester &amp; vulnerability analyst helping organizations identify security weaknesses and improve their security posture.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View Projects →</a>
+          <a href="#contact" class="btn-ghost">Download CV</a>
         </div>
       </div>
-    </div>
-
-    <!-- Main nav -->
-    <div class="mainnav">
-      <div class="container nav-inner">
-        <a class="brand" href="#home">Levi Hekman</a>
-
-        <nav class="nav-links">
-          <a href="#home" class="active">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#expertise">Expertise</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <a class="nav-cta" href="#contact">Let’s Talk →</a>
-      </div>
-    </div>
-  </header>
-
-  <section id="home" class="hero">
-    <div class="container hero-content">
-  
-      <div class="hero-text">
-        <p class="eyebrow-label">JUNIOR CYBERSECURITY PROFESSIONAL</p>
-        <h1 class="hero-name">Levi Hekman</h1>
-        <p class="hero-role">Penetration Tester | Vulnerability assessment</p>
-        <p class="hero-value-prop">
-          Helping organizations identify security weaknesses and improve their security posture
-        </p>
-      </div>
-  
-      <div class="hero-photo">
-        <img src="images/levi.png" alt="Levi Hekman">
-      </div>
-  
-    </div>
-  </section>
-  
-
-  <section id="about" class="section">
-    <div class="container">
-      <h2>Professional Summary</h2>
-      <p>I am a cybersecurity professional trained through the Ethical Hacker bootcamp at NOVI College Utrecht, an intensive HBO-level program focused on applied security and real-world attack scenarios.
-        I completed two parallel learning tracks—Security Orchestration and Software Security—where theoretical concepts were consistently translated into hands-on assignments and a comprehensive final project.
-        <br><br>
-        My focus lies in offensive security, web application testing, and vulnerability analysis, with strong attention to scope, impact and remediation. I approach security work analytically and methodically, translating technical findings into clear, risk-based recommendations that organizations can act on.</p>
-    </div>
-  </section>
-
-  <section id="Selected Security projects" class="section">
-    <div class="container">
-      <h2>Selected Security Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Vulnerability Analysis & Reporting Project</h3>
-          <p><strong>Context:</strong> Final bootcamp assessment</p>
-          <p><strong>Scope:</strong> End-to-end vulnerability assessment</p>
-          <p><strong>Approach:</strong> Identification, validation, and impact analysis</p>
-          <p><strong>Outcome:</strong> Professional security report tailored for both technical and non-technical stakeholders</p>
-          <p><strong>Type:</strong> Simulated security assessment (HBO-level Bootcamp project)</p>
-        </div>
-        <div class="project-card">
-          <h3>Web Application Security Assessment — OWASP Top 10</h3>
-          <p><strong>Context:</strong> Simulated assessment environment</p>
-          <p><strong>Scope:</strong> Authentication, input validation, and access control</p>
-          <p><strong>Approach:</strong> Structured testing based on OWASP methodology</p>
-          <p><strong>Findings:</strong> Injection flaws, broken authentication, and insecure configurations</p>
-          <p><strong>Outcome:</strong> Risk-based report with clear remediation guidance</p>
-          <p><strong>Type:</strong> Simulated security assessment (HBO-level Bootcamp project)</p>
-        </div>
-        <div class="project-card">
-          <h3>Network & Service Reconnaissance Assessment</h3>
-          <p><strong>Context:</strong> Controlled lab environment</p>
-          <p><strong>Scope:</strong> Network discovery and exposed services</p>
-          <p><strong>Approach:</strong> Active reconnaissance and service enumeration</p>
-          <p><strong>Tools:</strong> Nmap, manual verification</p>
-          <p><strong>Outcome:</strong> Identified attack surface and prioritized security risks</p>
-          <p><strong>Type:</strong> Simulated security assessment (HBO-level Bootcamp project)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-        </div>
+      <div class="hero-photo-wrap fade-up">
+        <img src="images/levi.png" alt="Levi Hekman" class="hero-photo">
+        <div class="terminal-badge">status: available for hire</div>
       </div>
     </div>
   </section>
 
-  <section id="Tooling & Technologies" class="section">
-    <div class="container">
-      <h2>Tooling & Technologies</h2>
-      <p>Tooling is used to support manual analysis, substitute for methodology.</p>
-      <br>
-      <ul class="Tooling & Technologies- skills-list">
-        <li>Kali Linux</li>
-        <li>Nmap</li>
-        <li>Burp Suite</li>
-        <li>Metasploit</li>
-        <li>SQLmap</li>
-        <li>Wireshark</li>
-        <li>Linux / Bash</li>
-        <li>Git & GitHub</li>
-      </ul>
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section id="about" class="section fade-up">
+    <p class="section-label">01 — About</p>
+    <h2>Professional Summary</h2>
+    <p class="about-text">Cybersecurity professional trained through the <strong>Ethical Hacker bootcamp at NOVI College Utrecht</strong> — an intensive HBO-level program focused on applied security and real-world attack scenarios. I completed two parallel learning tracks: <strong>Security Orchestration</strong> and <strong>Software Security</strong>, where theoretical concepts were consistently translated into hands-on assignments.</p>
+    <p class="about-text" style="margin-top: 16px;">My focus lies in <strong>offensive security, web application testing, and vulnerability analysis</strong> — with strong attention to scope, impact, and remediation. I translate technical findings into clear, risk-based recommendations that organizations can act on.</p>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Security Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">OWASP</div>
+        <div class="stat-label">Methodology</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">HBO</div>
+        <div class="stat-label">Bootcamp Level</div>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <form class="contact-form" action="mailto:example@email.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="name" required>
-        <input type="email" name="email" placeholder="E-mail" required>
+  <hr class="divider">
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section fade-up">
+    <p class="section-label">02 — Work</p>
+    <h2>Selected Security Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-num">01</div>
+        <h3>Vulnerability Analysis &amp; Reporting</h3>
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Context</span><span class="meta-val">Final bootcamp assessment</span></div>
+          <div class="meta-row"><span class="meta-key">Scope</span><span class="meta-val">End-to-end vulnerability assessment</span></div>
+          <div class="meta-row"><span class="meta-key">Approach</span><span class="meta-val">Identification, validation, impact analysis</span></div>
+          <div class="meta-row"><span class="meta-key">Outcome</span><span class="meta-val">Professional report for technical &amp; non-technical stakeholders</span></div>
+        </div>
+        <span class="project-tag">Simulated · HBO Level</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">02</div>
+        <h3>Web App Security Assessment — OWASP Top 10</h3>
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Context</span><span class="meta-val">Simulated assessment environment</span></div>
+          <div class="meta-row"><span class="meta-key">Scope</span><span class="meta-val">Auth, input validation, access control</span></div>
+          <div class="meta-row"><span class="meta-key">Findings</span><span class="meta-val">Injection flaws, broken auth, misconfigs</span></div>
+          <div class="meta-row"><span class="meta-key">Outcome</span><span class="meta-val">Risk-based report with remediation guidance</span></div>
+        </div>
+        <span class="project-tag">OWASP · HBO Level</span>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">03</div>
+        <h3>Network &amp; Service Reconnaissance Assessment</h3>
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Context</span><span class="meta-val">Controlled lab environment</span></div>
+          <div class="meta-row"><span class="meta-key">Scope</span><span class="meta-val">Network discovery &amp; exposed services</span></div>
+          <div class="meta-row"><span class="meta-key">Tools</span><span class="meta-val">Nmap, manual verification</span></div>
+          <div class="meta-row"><span class="meta-key">Outcome</span><span class="meta-val">Identified attack surface, prioritized risks</span></div>
+        </div>
+        <span class="project-tag">Recon · HBO Level</span>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- TOOLING -->
+  <section id="tooling" class="section fade-up">
+    <p class="section-label">03 — Tooling</p>
+    <h2>Technologies &amp; Tools</h2>
+    <p class="tools-note">Tooling supports manual analysis — it does not substitute for methodology.</p>
+    <div class="tools-wrap">
+      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Kali Linux</span></div>
+      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Nmap</span></div>
+      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Burp Suite</span></div>
+      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Metasploit</span></div>
+      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">SQLmap</span></div>
+      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Wireshark</span></div>
+      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Linux / Bash</span></div>
+      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Git &amp; GitHub</span></div>
+    </div>
+
+    <div class="certs-block">
+      <p class="section-label" style="margin-bottom: 20px;">Certifications &amp; Training</p>
+      <div class="certs-row">
+        <div class="cert-badge">
+          <div class="cert-icon">NOVI</div>
+          <div class="cert-info">
+            <div class="cert-name">Ethical Hacker Bootcamp</div>
+            <div class="cert-sub">NOVI College Utrecht · HBO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CONTACT -->
+  <section id="contact" class="section fade-up">
+    <p class="section-label">04 — Contact</p>
+    <h2>Let's Talk</h2>
+    <div class="contact-layout">
+
+      <div class="contact-info">
+        <p class="contact-intro">Open to junior pentesting roles, freelance assessments, and security internships.</p>
+        <a href="mailto:levi@icloud.com" class="contact-link">
+          <div class="cl-icon">@</div>
+          <div>
+            <div class="cl-label">Email</div>
+            <div class="cl-val">levihekman@icloud.com</div>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/levihekman" target="_blank" class="contact-link">
+          <div class="cl-icon">in</div>
+          <div>
+            <div class="cl-label">LinkedIn</div>
+            <div class="cl-val">linkedin.com/in/levihekman</div>
+          </div>
+        </a>
+        <a href="https://github.com/levihekman" target="_blank" class="contact-link">
+          <div class="cl-icon">gh</div>
+          <div>
+            <div class="cl-label">GitHub</div>
+            <div class="cl-val">github.com/levihekman</div>
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <div class="cl-icon">cv</div>
+          <div>
+            <div class="cl-label">Resume</div>
+            <div class="cl-val">Download PDF →</div>
+          </div>
+        </a>
+      </div>
+
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <input type="text" name="subject" placeholder="Subject">
         <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit">Verzenden</button>
+        <button type="submit" class="btn-primary">Send Message →</button>
       </form>
+
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Levi Hekman. All rights reserved.</p>
+    <span class="footer-brand">Levi Hekman</span>
+    <div class="footer-links">
+      <a href="https://github.com/levihekman" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/levihekman" target="_blank">LinkedIn</a>
+      <a href="#">CV</a>
     </div>
+    <span class="footer-copy">&copy; 2025 — All rights reserved</span>
   </footer>
+
 </body>
 </html>
