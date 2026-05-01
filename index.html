@@ -15,7 +15,7 @@
 
   <!-- NAV -->
   <nav class="nav">
-    <span class="nav-brand">LH_PORTFOLIO</span>
+    <span class="nav-brand">LH_PORTFOLIO<span class="nav-cursor">█</span></span>
     <div class="nav-links">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
@@ -28,10 +28,11 @@
 
   <!-- HERO -->
   <section id="home" class="hero-section">
+    <canvas id="hero-grid" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <div class="hero-text fade-up">
         <p class="eyebrow">Junior Cybersecurity Professional</p>
-        <h1>Levi<br><span class="accent">Hekman</span></h1>
+        <h1 id="hero-name" aria-label="Levi Hekman">Levi<br><span class="accent" id="hero-name-accent">Hekman</span></h1>
         <p class="hero-sub">Penetration tester &amp; vulnerability analyst helping organizations identify security weaknesses and improve their security posture.</p>
         <div class="hero-actions">
           <a href="#projects" class="btn-primary">View Projects →</a>
@@ -55,7 +56,7 @@
     <p class="about-text" style="margin-top: 16px;">My focus lies in <strong>offensive security, web application testing, and vulnerability analysis</strong> — with strong attention to scope, impact, and remediation. I translate technical findings into clear, risk-based recommendations that organizations can act on.</p>
     <div class="stats-row">
       <div class="stat">
-        <div class="stat-num">3</div>
+        <div class="stat-num" data-count="3">0</div>
         <div class="stat-label">Security Projects</div>
       </div>
       <div class="stat">
@@ -158,11 +159,11 @@
 
       <div class="contact-info">
         <p class="contact-intro">Open to junior pentesting roles, freelance assessments, and security internships.</p>
-        <a href="mailto:levi@icloud.com" class="contact-link">
+        <a href="mailto:levi@example.com" class="contact-link">
           <div class="cl-icon">@</div>
           <div>
             <div class="cl-label">Email</div>
-            <div class="cl-val">levihekman@icloud.com</div>
+            <div class="cl-val">levi@example.com</div>
           </div>
         </a>
         <a href="https://linkedin.com/in/levihekman" target="_blank" class="contact-link">
