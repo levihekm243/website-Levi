@@ -154,36 +154,36 @@ faders.forEach(el => fadeObserver.observe(el));
 })();
 
 const VRAGEN = [
-  { id:1,  ref:"A.9.1.2",   cat:"Toegangsbeheer",         w:5, q:"Heeft elk personeelslid een eigen account? (Geen gedeelde wachtwoorden)" },
-  { id:2,  ref:"A.9.2.6",   cat:"Toegangsbeheer",         w:5, q:"Worden accounts van medewerkers direct uitgeschakeld na uitdiensttreding?" },
-  { id:3,  ref:"A.9.4.3",   cat:"Toegangsbeheer",         w:4, q:"Gebruikt u twee-factor authenticatie (2FA) voor e-mail en cloudopslag?" },
-  { id:4,  ref:"A.9.4.3",   cat:"Toegangsbeheer",         w:3, q:"Heeft u een wachtwoordbeleid met minimale lengte en geen hergebruik?" },
-  { id:5,  ref:"A.9.2.3",   cat:"Toegangsbeheer",         w:4, q:"Zijn admin-rechten beperkt tot medewerkers die deze écht nodig hebben?" },
-  { id:6,  ref:"AVG Art.30", cat:"Gegevens & AVG",          w:5, q:"Weet u welke persoonsgegevens u verwerkt en waar deze zijn opgeslagen?" },
-  { id:7,  ref:"AVG Art.28", cat:"Gegevens & AVG",          w:5, q:"Heeft u een verwerkersovereenkomst met leveranciers die klantdata verwerken?" },
-  { id:8,  ref:"A.8.2.3",    cat:"Gegevens & AVG",          w:4, q:"Worden gevoelige bestanden versleuteld opgeslagen?" },
-  { id:9,  ref:"AVG Art.33", cat:"Gegevens & AVG",          w:5, q:"Heeft u een procedure voor datalekmelding binnen 72 uur?" },
-  { id:10, ref:"AVG Art.17", cat:"Gegevens & AVG",          w:4, q:"Worden persoonsgegevens verwijderd als een betrokkene dit verzoekt?" },
-  { id:11, ref:"A.12.3.1",   cat:"Back-up & Continuïteit", w:5, q:"Maakt u regelmatig back-ups van uw bedrijfsdata?" },
-  { id:12, ref:"A.12.3.1",   cat:"Back-up & Continuïteit", w:4, q:"Worden back-ups opgeslagen op een andere locatie dan de primaire data?" },
-  { id:13, ref:"A.12.3.1",   cat:"Back-up & Continuïteit", w:5, q:"Test u uw back-ups? (herstel uitgevoerd afgelopen 6 maanden?)" },
-  { id:14, ref:"A.17.1.1",   cat:"Back-up & Continuïteit", w:3, q:"Kunt u de bedrijfsvoering voortzetten als uw primaire systeem 24 uur uitvalt?" },
-  { id:15, ref:"A.13.1.1",   cat:"Netwerk & Apparaten",    w:4, q:"Is uw wifi beveiligd met WPA2 of WPA3 en een sterk wachtwoord?" },
-  { id:16, ref:"A.13.1.3",   cat:"Netwerk & Apparaten",    w:2, q:"Is er een apart gastnetwerk voor bezoekers en klanten?" },
-  { id:17, ref:"A.11.2.8",   cat:"Netwerk & Apparaten",    w:3, q:"Zijn alle apparaten (laptops, telefoons) voorzien van schermvergrendeling?" },
-  { id:18, ref:"A.12.6.1",   cat:"Netwerk & Apparaten",    w:4, q:"Worden software-updates en patches automatisch geïnstalleerd?" },
-  { id:19, ref:"A.12.2.1",   cat:"Netwerk & Apparaten",    w:3, q:"Heeft u antivirussoftware op alle werkstations?" },
-  { id:20, ref:"A.7.2.2",    cat:"Medewerkers & Bewustzijn", w:5, q:"Zijn medewerkers getraind om phishing-e-mails te herkennen?" },
-  { id:21, ref:"A.16.1.2",   cat:"Medewerkers & Bewustzijn", w:4, q:"Weten medewerkers wat ze moeten doen bij een verdacht incident?" },
-  { id:22, ref:"A.11.2.9",   cat:"Medewerkers & Bewustzijn", w:2, q:"Heeft u een clean-desk beleid? (Geen vertrouwelijke info zichtbaar op bureau)" },
-  { id:23, ref:"A.6.2.1",    cat:"Medewerkers & Bewustzijn", w:3, q:"Zijn er afspraken over het gebruik van privé-apparaten voor werk? (BYOD)" },
-  { id:24, ref:"A.6.2.2",    cat:"Thuiswerken & Cloud",    w:4, q:"Gebruiken medewerkers een VPN bij thuiswerken?" },
-  { id:25, ref:"A.15.1.1",   cat:"Thuiswerken & Cloud",    w:3, q:"Weet u bij welke cloudproviders uw data staat? (Google Drive, Dropbox, etc.)" },
-  { id:26, ref:"A.6.2.1",    cat:"Thuiswerken & Cloud",    w:3, q:"Zijn zakelijke en privé cloudomgevingen gescheiden?" },
-  { id:27, ref:"A.9.2.1",    cat:"Thuiswerken & Cloud",    w:4, q:"Heeft u inzicht in wie toegang heeft tot gedeelde cloudomgevingen?" },
-  { id:28, ref:"A.11.1.2",   cat:"Fysieke Beveiliging",    w:3, q:"Is toegang tot serverruimtes of netwerkkastjes beperkt?" },
-  { id:29, ref:"A.11.2.7",   cat:"Fysieke Beveiliging",    w:4, q:"Worden afgedankte apparaten veilig vernietigd met data-wissing?" },
-  { id:30, ref:"A.11.2.9",   cat:"Fysieke Beveiliging",    w:2, q:"Zijn gevoelige documenten achter slot als niemand aanwezig is?" },
+  { id:1,  ref:"A.9.1.2",    cat:"Access Control",          w:5, q:"Does every employee have their own account? (No shared passwords)" },
+  { id:2,  ref:"A.9.2.6",    cat:"Access Control",          w:5, q:"Are accounts immediately disabled when an employee leaves?" },
+  { id:3,  ref:"A.9.4.3",    cat:"Access Control",          w:4, q:"Do you use two-factor authentication (2FA) for email and cloud storage?" },
+  { id:4,  ref:"A.9.4.3",    cat:"Access Control",          w:3, q:"Do you have a password policy with minimum length and no reuse?" },
+  { id:5,  ref:"A.9.2.3",    cat:"Access Control",          w:4, q:"Are admin rights restricted to employees who genuinely need them?" },
+  { id:6,  ref:"AVG Art.30", cat:"Data & GDPR",             w:5, q:"Do you know what personal data you process and where it is stored?" },
+  { id:7,  ref:"AVG Art.28", cat:"Data & GDPR",             w:5, q:"Do you have data processing agreements with vendors who handle customer data?" },
+  { id:8,  ref:"A.8.2.3",    cat:"Data & GDPR",             w:4, q:"Are sensitive files stored in encrypted form?" },
+  { id:9,  ref:"AVG Art.33", cat:"Data & GDPR",             w:5, q:"Do you have a procedure for reporting data breaches within 72 hours?" },
+  { id:10, ref:"AVG Art.17", cat:"Data & GDPR",             w:4, q:"Are personal data deleted when a subject requests this?" },
+  { id:11, ref:"A.12.3.1",   cat:"Backup & Continuity",    w:5, q:"Do you make regular backups of your business data?" },
+  { id:12, ref:"A.12.3.1",   cat:"Backup & Continuity",    w:4, q:"Are backups stored at a different location than the primary data?" },
+  { id:13, ref:"A.12.3.1",   cat:"Backup & Continuity",    w:5, q:"Do you test your backups? (Restore performed in the last 6 months?)" },
+  { id:14, ref:"A.17.1.1",   cat:"Backup & Continuity",    w:3, q:"Can you continue operations if your primary system is down for 24 hours?" },
+  { id:15, ref:"A.13.1.1",   cat:"Network & Devices",      w:4, q:"Is your Wi-Fi secured with WPA2 or WPA3 and a strong password?" },
+  { id:16, ref:"A.13.1.3",   cat:"Network & Devices",      w:2, q:"Is there a separate guest network for visitors and clients?" },
+  { id:17, ref:"A.11.2.8",   cat:"Network & Devices",      w:3, q:"Are all devices (laptops, phones) protected with a screen lock?" },
+  { id:18, ref:"A.12.6.1",   cat:"Network & Devices",      w:4, q:"Are software updates and patches installed automatically?" },
+  { id:19, ref:"A.12.2.1",   cat:"Network & Devices",      w:3, q:"Do you have antivirus software on all workstations?" },
+  { id:20, ref:"A.7.2.2",    cat:"People & Awareness",     w:5, q:"Have employees been trained to recognise phishing emails?" },
+  { id:21, ref:"A.16.1.2",   cat:"People & Awareness",     w:4, q:"Do employees know what to do when they suspect a security incident?" },
+  { id:22, ref:"A.11.2.9",   cat:"People & Awareness",     w:2, q:"Do you have a clean-desk policy? (No sensitive info visible on desks)" },
+  { id:23, ref:"A.6.2.1",    cat:"People & Awareness",     w:3, q:"Are there agreements about using personal devices for work? (BYOD)" },
+  { id:24, ref:"A.6.2.2",    cat:"Remote Work & Cloud",    w:4, q:"Do employees use a VPN when working from home?" },
+  { id:25, ref:"A.15.1.1",   cat:"Remote Work & Cloud",    w:3, q:"Do you know which cloud providers hold your data? (Google Drive, Dropbox, etc.)" },
+  { id:26, ref:"A.6.2.1",    cat:"Remote Work & Cloud",    w:3, q:"Are business and personal cloud environments separated?" },
+  { id:27, ref:"A.9.2.1",    cat:"Remote Work & Cloud",    w:4, q:"Do you have oversight of who has access to shared cloud environments?" },
+  { id:28, ref:"A.11.1.2",   cat:"Physical Security",      w:3, q:"Is access to server rooms or network cabinets restricted?" },
+  { id:29, ref:"A.11.2.7",   cat:"Physical Security",      w:4, q:"Are decommissioned devices securely wiped before disposal?" },
+  { id:30, ref:"A.11.2.9",   cat:"Physical Security",      w:2, q:"Are sensitive documents locked away when no one is present?" },
 ];
 
 const answers = {};
@@ -207,9 +207,9 @@ function buildQuestions() {
         <span class="q-ref">${v.ref}</span>
         <span class="q-text">${v.q}</span>
         <div class="q-opts">
-          <button class="opt-btn" onclick="pick(${v.idx},'ja',this)">JA</button>
-          <button class="opt-btn" onclick="pick(${v.idx},'deels',this)">DEELS</button>
-          <button class="opt-btn" onclick="pick(${v.idx},'nee',this)">NEE</button>
+          <button class="opt-btn" onclick="pick(${v.idx},'yes',this)">YES</button>
+          <button class="opt-btn" onclick="pick(${v.idx},'partial',this)">PARTIAL</button>
+          <button class="opt-btn" onclick="pick(${v.idx},'no',this)">NO</button>
         </div>
       </div>`).join('');
 
@@ -219,7 +219,7 @@ function buildQuestions() {
       <div class="cat-header">
         <span class="cat-num">${numStr}</span>
         <span class="cat-name">${cat}</span>
-        <span class="cat-count">${vragen.length} vragen</span>
+        <span class="cat-count">${vragen.length} questions</span>
       </div>
       <div class="cat-questions">${qHtml}</div>`;
     container.appendChild(group);
@@ -230,7 +230,7 @@ function pick(idx, val, btn) {
   answers[idx] = val;
   const row = document.getElementById(`qrow-${idx}`);
   row.classList.add('answered');
-  row.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('sel-ja','sel-deels','sel-nee'));
+  row.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('sel-yes','sel-partial','sel-no'));
   btn.classList.add(`sel-${val}`);
   updateProgress();
 }
@@ -238,14 +238,14 @@ function pick(idx, val, btn) {
 function updateProgress() {
   const n = Object.keys(answers).length;
   const pct = Math.round(n / VRAGEN.length * 100);
-  document.getElementById('prog-label').textContent = `${n} / ${VRAGEN.length} beantwoord`;
+  document.getElementById('prog-label').textContent = `${n} / ${VRAGEN.length} answered`;
   document.getElementById('prog-fill').style.width = pct + '%';
 }
 
 function runScan() {
   const n = Object.keys(answers).length;
   if (n < 15) {
-    alert('Beantwoord minimaal 15 vragen voor een betrouwbare score.');
+    alert('Please answer at least 15 questions for a reliable score.');
     return;
   }
 
@@ -253,46 +253,46 @@ function runScan() {
   const acties = [];
 
   VRAGEN.forEach((v, i) => {
-    const w = answers[i] || 'nee';
+    const w = answers[i] || 'no';
     totaal += v.w;
-    if (w === 'ja') {
+    if (w === 'yes') {
       behaald += v.w;
-    } else if (w === 'deels') {
+    } else if (w === 'partial') {
       behaald += v.w * 0.5;
-      acties.push({ prio: 'middel', ref: v.ref, q: v.q });
+      acties.push({ prio: 'medium', ref: v.ref, q: v.q });
     } else {
-      acties.push({ prio: v.w >= 4 ? 'hoog' : 'laag', ref: v.ref, q: v.q });
+      acties.push({ prio: v.w >= 4 ? 'high' : 'low', ref: v.ref, q: v.q });
     }
   });
 
   const score = totaal > 0 ? Math.round(behaald / totaal * 100) : 0;
   const cfg = score >= 80
-    ? { niveau: 'Goed', kleur: '#4ade80' }
+    ? { niveau: 'Good', kleur: '#4ade80' }
     : score >= 60
-    ? { niveau: 'Voldoende', kleur: '#fbbf24' }
+    ? { niveau: 'Sufficient', kleur: '#fbbf24' }
     : score >= 40
-    ? { niveau: 'Matig', kleur: '#fb923c' }
-    : { niveau: 'Onvoldoende', kleur: '#f87171' };
+    ? { niveau: 'Moderate', kleur: '#fb923c' }
+    : { niveau: 'Insufficient', kleur: '#f87171' };
 
-  const company = document.getElementById('company-input').value.trim() || 'Uw bedrijf';
+  const company = document.getElementById('company-input').value.trim() || 'Your organisation';
 
   document.getElementById('result-score').textContent = score + '%';
   document.getElementById('result-score').style.color = cfg.kleur;
   document.getElementById('result-bar').style.background = cfg.kleur;
-  document.getElementById('result-niveau').textContent = `Niveau: ${cfg.niveau} — ${company}`;
+  document.getElementById('result-niveau').textContent = `Rating: ${cfg.niveau} — ${company}`;
 
   setTimeout(() => {
     document.getElementById('result-bar').style.width = score + '%';
   }, 80);
 
-  const order = { hoog: 0, middel: 1, laag: 2 };
+  const order = { high: 0, medium: 1, low: 2 };
   acties.sort((a, b) => order[a.prio] - order[b.prio]);
 
   const list = document.getElementById('findings-list');
   if (acties.length === 0) {
     list.innerHTML = `<div class="finding">
       <span class="f-prio p-ok">COMPLIANT</span>
-      <span class="f-text">Geen kritieke bevindingen. Uitstekende beveiligingshouding.</span>
+      <span class="f-text">No critical findings. Strong security posture.</span>
       <span class="f-ref"></span>
     </div>`;
   } else {
@@ -304,7 +304,7 @@ function runScan() {
       </div>`).join('')
       + (acties.length > 8 ? `<div class="finding">
         <span class="f-prio" style="visibility:hidden">—</span>
-        <span class="f-text" style="color:#444">+ ${acties.length - 8} verdere bevindingen in het volledige rapport.</span>
+        <span class="f-text" style="color:var(--muted)">+ ${acties.length - 8} additional findings in the full report.</span>
         <span></span></div>` : '');
   }
 
@@ -319,9 +319,9 @@ function resetScan() {
   document.getElementById('result-view').style.display = 'none';
   document.getElementById('company-input').value = '';
   document.getElementById('prog-fill').style.width = '0%';
-  document.getElementById('prog-label').textContent = '0 / 30 beantwoord';
+  document.getElementById('prog-label').textContent = '0 / 30 answered';
   document.querySelectorAll('.opt-btn').forEach(b =>
-    b.classList.remove('sel-ja','sel-deels','sel-nee'));
+    b.classList.remove('sel-yes','sel-partial','sel-no'));
   document.querySelectorAll('.q-row').forEach(r => r.classList.remove('answered'));
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }

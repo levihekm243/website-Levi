@@ -122,42 +122,45 @@
   <!-- Security-Scan -->
   <section id="security-scan" class="section fade-up">
     <p class="section-label">03 — Interactive Tool</p>
-    <h2>Gratis Beveiligingsscan</h2>
-    <p class="about-text" style="margin-bottom: 32px;">Ontvang direct een compliance-score en geprioriteerde verbeterpunten op basis van het ISO 27001 framework.</p>
-  
+    <h2>Free Security Scan</h2>
+    <p class="about-text" style="margin-bottom: 32px;">Answer 30 questions and receive an instant compliance score with prioritised action items — based on the ISO 27001 framework. No account required.</p>
+
     <div class="scan-card">
       <div class="scan-card-header">
         <div class="scan-card-title">~ security_scan.sh</div>
-        <div class="scan-status"><div class="status-dot"></div>live — geen data opgeslagen</div>
+        <div class="scan-status"><div class="status-dot"></div>live — no data stored</div>
       </div>
-  
+
       <div class="form-body" id="form-view">
         <div class="company-row">
-          <span class="company-prompt">~ bedrijfsnaam</span>
-          <input type="text" id="company-input" placeholder="Uw bedrijfsnaam..." autocomplete="off">
+          <span class="company-prompt">~ company</span>
+          <input type="text" id="company-input" placeholder="Your company name..." autocomplete="off">
         </div>
         <div class="progress-row">
-          <span class="progress-label" id="prog-label">0 / 30 beantwoord</span>
+          <span class="progress-label" id="prog-label">0 / 30 answered</span>
           <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
         </div>
         <div id="questions-container"></div>
-        <button class="btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="runScan()">Analyseer beveiliging →</button>
+        <button class="btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="runScan()">Run security analysis →</button>
       </div>
-  
+
       <div class="result-body" id="result-view" style="display: none;">
-        <div class="score-block" style="text-align: center; padding: 2rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 2rem;">
-          <div id="result-score" style="font-size: 64px; font-weight: 800; margin-bottom: 10px;">—</div>
-          <div class="progress-track" style="max-width: 300px; margin: 0 auto 15px;"><div class="progress-fill" id="result-bar"></div></div>
-          <div id="result-niveau" style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); text-transform: uppercase;">Berekening...</div>
+        <div class="score-block">
+          <div id="result-score">—</div>
+          <div class="progress-track" style="max-width: 300px; margin: 12px auto;"><div class="progress-fill" id="result-bar"></div></div>
+          <div id="result-niveau">Calculating...</div>
         </div>
-        <div class="findings-label" style="font-family: 'Space Mono', monospace; font-size: 10px; color: var(--accent); margin-bottom: 1rem;">→ BEVINDINGEN (PRIORITEIT)</div>
-        <div id="findings-list" style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem;"></div>
-        <div class="cta-card" style="background: var(--surface2); padding: 1.5rem; border-radius: 8px;">
-          <h3 style="font-size: 14px; margin-bottom: 8px;">Volgende stap — Volledig IBP-rapport</h3>
-          <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px;">Ik genereer een op maat gemaakt Informatiebeveiligingsbeleid op basis van deze scan.</p>
-          <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center;">Ontvang rapport →</a>
+        <div class="findings-label">→ FINDINGS (BY PRIORITY)</div>
+        <div id="findings-list" class="findings-list"></div>
+        <div class="cta-card">
+          <h3 class="cta-title">Next step — Full security policy document</h3>
+          <p class="cta-sub">Based on your scan results, I can generate a tailored Information Security Policy (ISP) — legally recognised by auditors and data protection authorities.</p>
+          <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 0;">Request full report →</a>
         </div>
+        <p class="reset-link" onclick="resetScan()">← Start a new scan</p>
       </div>
+    </div>
+  </section>
     </div>
   </section>
 
@@ -166,6 +169,7 @@
   <!-- TOOLING -->
   <section id="tooling" class="section fade-up">
     <p class="section-label">04 — Tooling</p>
+
     <h2>Technologies &amp; Tools</h2>
     <p class="tools-note">Tooling supports manual analysis — it does not substitute for methodology.</p>
     <div class="tools-wrap">
