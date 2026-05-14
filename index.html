@@ -132,16 +132,23 @@
       </div>
 
       <div class="form-body" id="form-view">
+
+        <!-- Step 1: company name -->
         <div class="company-row">
           <span class="company-prompt">~ company</span>
-          <input type="text" id="company-input" placeholder="Your company name..." autocomplete="off">
+          <input type="text" id="company-input" placeholder="Enter your company name to start..." autocomplete="off" oninput="handleCompanyInput(this.value)">
         </div>
-        <div class="progress-row">
-          <span class="progress-label" id="prog-label">0 / 30 answered</span>
-          <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
+
+        <!-- Step 2: questions — hidden until name is typed -->
+        <div id="scan-questions-wrap" class="scan-questions-hidden">
+          <div class="progress-row">
+            <span class="progress-label" id="prog-label">0 / 30 answered</span>
+            <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
+          </div>
+          <div id="questions-container"></div>
+          <button class="btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="runScan()">Run security analysis →</button>
         </div>
-        <div id="questions-container"></div>
-        <button class="btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="runScan()">Run security analysis →</button>
+
       </div>
 
       <div class="result-body" id="result-view" style="display: none;">
@@ -159,8 +166,6 @@
         </div>
         <p class="reset-link" onclick="resetScan()">← Start a new scan</p>
       </div>
-    </div>
-  </section>
     </div>
   </section>
 
@@ -207,18 +212,18 @@
 
       <div class="contact-info">
         <p class="contact-intro">Open to junior pentesting roles, freelance assessments, and security internships.</p>
-        <a href="mailto:levihekman@icloud.com" class="contact-link">
+        <a href="mailto:Levihekman@icloud.com" class="contact-link">
           <div class="cl-icon">@</div>
           <div>
             <div class="cl-label">Email</div>
-            <div class="cl-val">levi@icloud.com</div>
+            <div class="cl-val">Levihekman@icloud.com</div>
           </div>
         </a>
-        <a href="https://linkedin.com/in/levihekman" target="_blank" class="contact-link">
+        <a href="https://www.linkedin.com/in/levi-hekman/" target="_blank" rel="noopener noreferrer" class="contact-link">
           <div class="cl-icon">in</div>
           <div>
             <div class="cl-label">LinkedIn</div>
-            <div class="cl-val">linkedin.com/in/levihekman</div>
+            <div class="cl-val">linkedin.com/in/levi-hekman</div>
           </div>
         </a>
         <a href="https://github.com/levihekman" target="_blank" class="contact-link">
@@ -255,7 +260,7 @@
     <span class="footer-brand">Levi Hekman</span>
     <div class="footer-links">
       <a href="https://github.com/levihekman" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/levihekman" target="_blank">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/levi-hekman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="#">CV</a>
     </div>
     <span class="footer-copy">&copy; 2025 — All rights reserved</span>

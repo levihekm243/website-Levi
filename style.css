@@ -874,6 +874,23 @@ body {
 .reset-link { display: block; text-align: center; margin-top: 1rem; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); cursor: pointer; transition: color 0.2s; letter-spacing: 0.04em; }
 .reset-link:hover { color: var(--accent); }
 
+/* Scan questions reveal animation */
+.scan-questions-hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.scan-questions-visible {
+  display: block;
+  animation: scanReveal 0.35s ease forwards;
+}
+
+@keyframes scanReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Mobile scan */
 @media (max-width: 600px) {
   .q-row { grid-template-columns: 1fr; gap: 8px; }

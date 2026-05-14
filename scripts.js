@@ -188,6 +188,17 @@ const VRAGEN = [
 
 const answers = {};
 
+function handleCompanyInput(val) {
+  const wrap = document.getElementById('scan-questions-wrap');
+  if (val.trim().length >= 2) {
+    wrap.classList.remove('scan-questions-hidden');
+    wrap.classList.add('scan-questions-visible');
+  } else {
+    wrap.classList.remove('scan-questions-visible');
+    wrap.classList.add('scan-questions-hidden');
+  }
+}
+
 function buildQuestions() {
   const cats = {};
   VRAGEN.forEach((v, i) => {
@@ -323,6 +334,10 @@ function resetScan() {
   document.querySelectorAll('.opt-btn').forEach(b =>
     b.classList.remove('sel-yes','sel-partial','sel-no'));
   document.querySelectorAll('.q-row').forEach(r => r.classList.remove('answered'));
+  // Re-hide questions until company name is typed again
+  const wrap = document.getElementById('scan-questions-wrap');
+  wrap.classList.remove('scan-questions-visible');
+  wrap.classList.add('scan-questions-hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
