@@ -119,9 +119,53 @@
 
   <hr class="divider">
 
+  <!-- Security-Scan -->
+  <section id="security-scan" class="section fade-up">
+    <p class="section-label">03 — Interactive Tool</p>
+    <h2>Gratis Beveiligingsscan</h2>
+    <p class="about-text" style="margin-bottom: 32px;">Ontvang direct een compliance-score en geprioriteerde verbeterpunten op basis van het ISO 27001 framework.</p>
+  
+    <div class="scan-card">
+      <div class="scan-card-header">
+        <div class="scan-card-title">~ security_scan.sh</div>
+        <div class="scan-status"><div class="status-dot"></div>live — geen data opgeslagen</div>
+      </div>
+  
+      <div class="form-body" id="form-view">
+        <div class="company-row">
+          <span class="company-prompt">~ bedrijfsnaam</span>
+          <input type="text" id="company-input" placeholder="Uw bedrijfsnaam..." autocomplete="off">
+        </div>
+        <div class="progress-row">
+          <span class="progress-label" id="prog-label">0 / 30 beantwoord</span>
+          <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
+        </div>
+        <div id="questions-container"></div>
+        <button class="btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="runScan()">Analyseer beveiliging →</button>
+      </div>
+  
+      <div class="result-body" id="result-view" style="display: none;">
+        <div class="score-block" style="text-align: center; padding: 2rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 2rem;">
+          <div id="result-score" style="font-size: 64px; font-weight: 800; margin-bottom: 10px;">—</div>
+          <div class="progress-track" style="max-width: 300px; margin: 0 auto 15px;"><div class="progress-fill" id="result-bar"></div></div>
+          <div id="result-niveau" style="font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); text-transform: uppercase;">Berekening...</div>
+        </div>
+        <div class="findings-label" style="font-family: 'Space Mono', monospace; font-size: 10px; color: var(--accent); margin-bottom: 1rem;">→ BEVINDINGEN (PRIORITEIT)</div>
+        <div id="findings-list" style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem;"></div>
+        <div class="cta-card" style="background: var(--surface2); padding: 1.5rem; border-radius: 8px;">
+          <h3 style="font-size: 14px; margin-bottom: 8px;">Volgende stap — Volledig IBP-rapport</h3>
+          <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px;">Ik genereer een op maat gemaakt Informatiebeveiligingsbeleid op basis van deze scan.</p>
+          <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center;">Ontvang rapport →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
   <!-- TOOLING -->
   <section id="tooling" class="section fade-up">
-    <p class="section-label">03 — Tooling</p>
+    <p class="section-label">04 — Tooling</p>
     <h2>Technologies &amp; Tools</h2>
     <p class="tools-note">Tooling supports manual analysis — it does not substitute for methodology.</p>
     <div class="tools-wrap">
@@ -153,17 +197,17 @@
 
   <!-- CONTACT -->
   <section id="contact" class="section fade-up">
-    <p class="section-label">04 — Contact</p>
+    <p class="section-label">05 — Contact</p>
     <h2>Let's Talk</h2>
     <div class="contact-layout">
 
       <div class="contact-info">
         <p class="contact-intro">Open to junior pentesting roles, freelance assessments, and security internships.</p>
-        <a href="mailto:levi@example.com" class="contact-link">
+        <a href="mailto:levihekman@icloud.com" class="contact-link">
           <div class="cl-icon">@</div>
           <div>
             <div class="cl-label">Email</div>
-            <div class="cl-val">levi@example.com</div>
+            <div class="cl-val">levi@icloud.com</div>
           </div>
         </a>
         <a href="https://linkedin.com/in/levihekman" target="_blank" class="contact-link">
