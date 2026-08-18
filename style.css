@@ -352,6 +352,39 @@ body {
   letter-spacing: 0.06em;
 }
 
+.venture-note {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.venture-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.venture-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border-accent);
+  transition: border-color 0.2s;
+}
+
+.venture-link:hover {
+  border-color: var(--accent);
+}
+
+.venture-desc {
+  color: var(--muted);
+}
+
 /* ================================
    PROJECTS
    ================================ */
