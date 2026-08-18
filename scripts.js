@@ -324,6 +324,9 @@ function runScan() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 function resetScan() {
   Object.keys(answers).forEach(k => delete answers[k]);
   document.getElementById('form-view').style.display = 'block';
