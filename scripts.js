@@ -365,3 +365,27 @@ document.addEventListener('keydown', function (e) {
 });
 var _ci = document.getElementById('company-input');
 if (_ci) _ci.addEventListener('input', function () { handleCompanyInput(this.value); });
+
+
+// ── MOBIEL MENU ─────────────────────────────────────────────────────────────
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  if (!btn) return;
+  var balk = btn.closest('.nav');
+  var menu = document.getElementById('nav-menu');
+  function zet(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    balk.classList.toggle('is-open', open);
+  }
+  btn.addEventListener('click', function () {
+    zet(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  if (menu) menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') zet(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+      zet(false); btn.focus();
+    }
+  });
+})();

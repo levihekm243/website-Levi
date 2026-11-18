@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Levi Hekman — Junior Cybersecurity Professional. Penetration tester and vulnerability analyst based in the Netherlands.">
   <title>Levi Hekman | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="js/flag.js"></script>
+    <link rel="stylesheet" href="style.css">
   <script defer src="scripts.js"></script>
     <link rel="canonical" href="https://levihekman.nl/portfolio.html">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -25,14 +26,16 @@
   <!-- NAV -->
   <nav class="nav">
     <span class="nav-brand">LH_PORTFOLIO</span>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-menu">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#security-scan">Scan</a>
       <a href="#tooling">Tooling</a>
       <a href="#contact">Contact</a>
+      <a href="werkgevers.html">Voor werkgevers</a>
     </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</button>
     <a href="#contact" class="nav-cta">Let's Talk →</a>
   </nav>
 

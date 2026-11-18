@@ -8,6 +8,7 @@
     {t:"Is er een plan voor als het misgaat — wie belt wie, en hoe snel?", s:"Op het moment zelf is er geen tijd om dit te bedenken.", g:"Incidentplan", a:"Schrijf één A4: wie beslist, wie belt de klanten, wie de verzekeraar, en binnen welke termijn. Meer is het niet."}
   ];
   var antw = {}, qs = document.getElementById('qs');
+  if (!qs) return;              // de check staat alleen op de homepage
 
   VRAGEN.forEach(function(v, i){
     var row = document.createElement('div');
@@ -95,6 +96,8 @@
     document.getElementById('pct').innerHTML = '0<i>%</i>';
     document.getElementById('gaps').innerHTML = '';
     update();
+    var kop = document.getElementById('check-kop');
+    if (kop) { kop.focus(); }
     document.getElementById('check').scrollIntoView({block:'start'});
   });
   update();
@@ -105,4 +108,29 @@
     es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:.1});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+
+
+// ── MOBIEL MENU ─────────────────────────────────────────────────────────────
+// Geen inline handlers: die worden door de CSP geblokkeerd.
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  if (!btn) return;
+  var balk = btn.closest('.nav-in') || btn.closest('.nav');  // portfolio.html heeft een eigen navigatie
+  var menu = document.getElementById('nav-menu');
+  function zet(open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    balk.classList.toggle('is-open', open);
+  }
+  btn.addEventListener('click', function(){
+    zet(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  if (menu) menu.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') zet(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true'){
+      zet(false); btn.focus();
+    }
+  });
 })();
