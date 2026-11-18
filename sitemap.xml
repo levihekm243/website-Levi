@@ -8,7 +8,14 @@
 
 <url>
   <loc>https://levihekman.nl/</loc>
-  <lastmod>2026-04-30T09:09:59+00:00</lastmod>
+  <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://levihekman.nl/portfolio.html</loc>
+  <lastmod>2026-11-18T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
 </url>
 
 

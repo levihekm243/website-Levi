@@ -1,310 +1,658 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Levi Hekman — Junior Cybersecurity Professional. Penetration tester and vulnerability analyst based in the Netherlands.">
-  <title>Levi Hekman | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="scripts.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Levi Hekman — Cyber security &amp; AI voor het MKB</title>
+<meta name="description" content="Levi Hekman bouwt en beveiligt de systemen waar MKB-bedrijven op draaien: beveiliging en compliance, AI-integratie en platformbouw. Doe de gratis check van twee minuten.">
+<meta name="theme-color" content="#0B0D12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Levi Hekman — Cyber security &amp; AI voor het MKB">
+<meta property="og:description" content="Ik bouw en beveilig de systemen waar je bedrijf op draait. Doe de gratis check van twee minuten.">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="https://levihekman.nl/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Hanken+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#0B0D12;
+  --surface:#12151C;
+  --raised:#171B24;
+  --line:rgba(199,204,214,.12);
+  --line-2:rgba(199,204,214,.24);
+  --text:#ECEEF2;
+  --muted:#9CA3B0;
+  --dim:#767E8C;
+  --gold:#D3A054;
+  --gold-ink:#E8C079;
+  --gold-soft:rgba(211,160,84,.13);
+  --teal:#58C9B0;
+  --good:#45B084;
+  --warn:#F0A048;
+  --bad:#E2604A;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --pad:clamp(1.15rem,5vw,3rem);
+  --maxw:70rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+html,body{max-width:100%;overflow-x:clip}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-weight:300;font-size:clamp(1rem,1.05vw,1.06rem);line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.012em;text-wrap:balance;line-height:1.1}
+p{margin:0;text-wrap:pretty}
+a{color:inherit;text-decoration:none}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+section[id]{scroll-margin-top:5rem}
+.eyebrow{
+  font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--gold-ink);display:inline-flex;align-items:center;gap:.7rem;
+}
+.eyebrow::before{content:"";width:1.6rem;height:1px;background:var(--gold);opacity:.6}
+.lead{color:var(--muted);font-size:clamp(1.02rem,1.35vw,1.16rem);max-width:56ch}
+.tbc{color:var(--warn);font-family:var(--mono);font-size:.82em;letter-spacing:.02em}
+
+/* ---------- ambient ---------- */
+.aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aura i{position:absolute;display:block;border-radius:50%;filter:blur(90px)}
+.aura .g1{width:48vmax;height:48vmax;left:48%;top:-20vmax;background:radial-gradient(circle,rgba(211,160,84,.42),transparent 68%);animation:drift1 38s ease-in-out infinite}
+.aura .g2{width:40vmax;height:40vmax;left:-12vmax;top:16vmax;background:radial-gradient(circle,rgba(88,201,176,.26),transparent 68%);animation:drift2 47s ease-in-out infinite}
+.aura .g3{width:34vmax;height:34vmax;left:58%;top:48vmax;background:radial-gradient(circle,rgba(141,121,255,.24),transparent 68%);animation:drift3 56s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-7vw,5vh,0) scale(1.12)}}
+@keyframes drift2{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(6vw,-4vh,0) scale(1.1)}}
+@keyframes drift3{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-5vw,-6vh,0) scale(1.08)}}
+.grain{
+  position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  background-size:160px 160px;
+}
+.page{position:relative;z-index:2}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:60;background:rgba(11,13,18,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:.85rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.mark{display:flex;align-items:center;gap:.65rem;font-family:var(--serif);font-size:1.02rem;letter-spacing:-.01em}
+.mark b{
+  display:grid;place-items:center;width:1.85rem;height:1.85rem;border-radius:.45rem;
+  background:linear-gradient(145deg,var(--gold-ink),var(--gold));color:#19140a;
+  font-family:var(--mono);font-size:.66rem;font-weight:500;
+}
+.nav ul{display:none;gap:1.9rem;font-size:.88rem}
+.nav ul a{color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--text)}
+@media(min-width:950px){.nav ul{display:flex}}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.82rem 1.5rem;border-radius:.5rem;font-size:.92rem;font-weight:500;
+  transition:transform .18s,box-shadow .18s,background .2s,border-color .2s;white-space:nowrap;
+}
+.btn-g{background:linear-gradient(140deg,var(--gold-ink),var(--gold));color:#1a1407}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(211,160,84,.8)}
+.btn-o{border:1px solid var(--line-2);color:var(--text)}
+.btn-o:hover{transform:translateY(-2px);border-color:var(--gold);background:var(--gold-soft)}
+.btn-s{padding:.6rem 1.1rem;font-size:.85rem}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(3rem,8vw,6rem) clamp(3rem,7vw,5rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,5vw,4rem);grid-template-columns:1fr;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)}}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);margin-block:1.5rem 0;line-height:1.08}
+.hero h1 em{font-style:italic;color:var(--gold-ink)}
+.hero .lead{margin-top:1.5rem}
+.hero-cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.2rem}
+.chip{
+  display:inline-flex;align-items:center;gap:.5rem;
+  border:1px solid var(--line);border-radius:999px;padding:.42rem .9rem;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--muted);
+}
+.chip::before{content:"";width:.4rem;height:.4rem;border-radius:999px;background:var(--good)}
+.chip.alt::before{background:var(--gold)}
+.chip.neutral::before{background:var(--dim)}
+.portrait{position:relative;margin:0 auto;width:100%;max-width:19rem}
+@media(min-width:900px){.portrait{margin:0 0 0 auto;max-width:21rem}}
+.portrait img{display:block;width:100%;height:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.8)) drop-shadow(0 0 70px rgba(211,160,84,.22))}
+.portrait figcaption{
+  margin-top:.9rem;padding-top:.85rem;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);line-height:1.7;
+}
+.portrait figcaption b{display:block;color:var(--text);font-weight:500;letter-spacing:.06em;font-size:.72rem}
+
+/* ---------- section scaffold ---------- */
+.sec{padding-block:clamp(3.5rem,8vw,6rem);border-top:1px solid var(--line)}
+.sec-head{max-width:46rem;margin-bottom:clamp(2rem,4vw,3rem)}
+.sec-head h2{font-size:clamp(1.8rem,3.8vw,2.8rem);margin-block:1.1rem .9rem}
+
+/* ---------- scan ---------- */
+.scan{
+  border:1px solid var(--line-2);border-radius:1.1rem;overflow:hidden;
+  background:linear-gradient(165deg,var(--raised),var(--surface) 70%);
+  box-shadow:0 40px 80px -50px rgba(0,0,0,.9);
+}
+.scan-top{padding:clamp(1.3rem,3vw,2rem);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
+.scan-top .t{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.prog{display:flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.prog .track{width:clamp(5rem,18vw,9rem);height:3px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+.prog .fill{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold-ink));transition:width .45s cubic-bezier(.2,.7,.3,1)}
+.q{padding:clamp(1.1rem,2.6vw,1.5rem) clamp(1.3rem,3vw,2rem);border-bottom:1px solid var(--line);display:grid;gap:.9rem}
+@media(min-width:760px){.q{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2rem}}
+.q:last-of-type{border-bottom:0}
+.q .qt{font-size:.98rem;color:var(--text);font-weight:400}
+.q .qs{display:block;margin-top:.3rem;font-size:.84rem;color:var(--dim)}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem;border:1px solid var(--line);border-radius:.5rem;padding:.25rem;background:rgba(0,0,0,.25)}
+@media(min-width:760px){.opts{display:flex}}
+.opts button{
+  border:0;background:transparent;color:var(--muted);
+  padding:.5rem .9rem;border-radius:.35rem;font-size:.82rem;font-weight:500;
+  transition:background .2s,color .2s;font-family:inherit;
+}
+.opts button:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.opts button[aria-pressed="true"]{background:var(--gold);color:#1a1407}
+.scan-foot{padding:clamp(1.2rem,3vw,1.8rem) clamp(1.3rem,3vw,2rem);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line)}
+.scan-foot .hint{font-family:var(--mono);font-size:.7rem;color:var(--dim);letter-spacing:.04em}
+.btn[disabled]{opacity:.4;pointer-events:none}
+
+/* result */
+.result{display:none;padding:clamp(1.5rem,3.5vw,2.4rem)}
+.result.on{display:block}
+.res-head{display:grid;gap:1.5rem;align-items:center;grid-template-columns:1fr}
+@media(min-width:680px){.res-head{grid-template-columns:auto minmax(0,1fr)}}
+.score{
+  width:7.5rem;height:7.5rem;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--gold) var(--deg,0deg), rgba(255,255,255,.07) 0);
+  position:relative;
+}
+.score::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--surface)}
+.score span{position:relative;font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--text)}
+.score span i{font-style:normal;font-size:.9rem;color:var(--dim)}
+.res-head h3{font-size:clamp(1.3rem,2.6vw,1.8rem)}
+.res-head p{margin-top:.6rem;color:var(--muted);font-size:.95rem;max-width:48ch}
+.gaps{margin-top:1.8rem;border-top:1px solid var(--line);padding-top:1.4rem;display:grid;gap:.8rem}
+.gap{display:grid;gap:.5rem 1rem;grid-template-columns:auto 1fr;align-items:start}
+.sev{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.28rem .5rem;border-radius:.25rem;white-space:nowrap;
+}
+.sev.hoog{color:var(--bad);background:rgba(226,96,74,.12);border:1px solid rgba(226,96,74,.3)}
+.sev.midden{color:var(--warn);background:rgba(240,160,72,.1);border:1px solid rgba(240,160,72,.28)}
+.gap b{display:block;font-weight:500;color:var(--text);font-size:.95rem}
+.gap span{color:var(--muted);font-size:.89rem}
+.res-cta{margin-top:1.8rem;display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}
+.res-cta .small{font-family:var(--mono);font-size:.68rem;color:var(--dim)}
+
+/* ---------- services ---------- */
+.svcs{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:880px){.svcs{grid-template-columns:repeat(3,1fr)}}
+.svc{
+  border:1px solid var(--line);border-radius:.9rem;padding:clamp(1.4rem,3vw,2rem);
+  background:linear-gradient(170deg,rgba(255,255,255,.03),transparent 60%);
+  display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;
+}
+.svc::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5}
+.svc .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;color:var(--gold-ink);text-transform:uppercase}
+.svc h3{font-size:1.3rem}
+.svc > p{color:var(--muted);font-size:.93rem}
+.svc ul{display:flex;flex-direction:column;gap:.6rem;margin-top:auto}
+.svc li{position:relative;padding-left:1.3rem;font-size:.89rem;color:var(--muted);line-height:1.6}
+.svc li::before{content:"";position:absolute;left:.1rem;top:.62em;width:.42rem;height:.42rem;border-radius:1px;background:var(--gold);transform:rotate(45deg)}
+.svc .pf{padding-top:1rem;border-top:1px solid var(--line);font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--dim)}
+.svc .pf a{color:var(--gold-ink);border-bottom:1px solid rgba(211,160,84,.4)}
+
+/* ---------- cases ---------- */
+.cases{border-top:1px solid var(--line)}
+.case{
+  display:grid;gap:.6rem 2.5rem;grid-template-columns:1fr;
+  padding-block:clamp(1.6rem,3.2vw,2.3rem);border-bottom:1px solid var(--line);position:relative;
+}
+@media(min-width:860px){.case{grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr)}}
+.case::after{content:"";position:absolute;left:0;right:100%;top:-1px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);transition:right .6s cubic-bezier(.2,.7,.3,1)}
+.case:hover::after{right:0}
+.case h3{font-size:clamp(1.2rem,2.3vw,1.55rem)}
+.case .meta{display:block;margin-top:.55rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.case p{color:var(--muted);font-size:.94rem}
+.case .ev{margin-top:.9rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.case .ev span,.case .ev a{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--muted);
+  border:1px solid var(--line);border-radius:.3rem;padding:.3rem .55rem;
+}
+.case .ev a{color:var(--gold-ink);border-color:rgba(211,160,84,.35)}
+.case .ev a:hover{background:var(--gold-soft)}
+
+/* ---------- werkwijze ---------- */
+.steps{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:.9rem;overflow:hidden;grid-template-columns:1fr}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--surface);padding:clamp(1.3rem,2.8vw,1.8rem);display:flex;flex-direction:column;gap:.6rem}
+.step .n{font-family:var(--mono);font-size:.68rem;color:var(--gold-ink);letter-spacing:.14em}
+.step h3{font-size:1.08rem}
+.step p{font-size:.88rem;color:var(--muted)}
+
+/* ---------- over / werkgevers ---------- */
+.split{display:grid;gap:clamp(2rem,4vw,3.5rem);grid-template-columns:1fr}
+@media(min-width:880px){.split{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.prose p+p{margin-top:1.1rem}
+.prose{color:var(--muted);max-width:58ch}
+.prose b{color:var(--text);font-weight:500}
+.panel{border:1px solid var(--line);border-radius:.9rem;padding:clamp(1.4rem,3vw,2rem);background:var(--surface)}
+.panel h3{font-size:1.25rem;margin-bottom:1rem}
+.deflist{display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.2rem;font-size:.9rem;align-items:baseline}
+.deflist dt{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.deflist dd{margin:0;color:var(--muted)}
+
+/* ---------- contact ---------- */
+.contact{text-align:center;padding-block:clamp(4rem,9vw,7rem)}
+.contact h2{font-size:clamp(2rem,5vw,3.3rem)}
+.contact .lead{margin:1.3rem auto 2.2rem}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:.8rem;overflow:hidden;margin-top:3rem;text-align:left}
+.citem{background:var(--surface);padding:1.1rem 1.3rem;transition:background .25s}
+.citem:hover{background:var(--raised)}
+.citem .k{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:.4rem}
+.citem .v{font-size:.92rem;color:var(--text);word-break:break-word}
+footer{border-top:1px solid var(--line);padding-block:1.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--dim)}
+
+.rise{opacity:0;transform:translateY(16px);animation:rise .9s cubic-bezier(.2,.75,.3,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.16s}.d3{animation-delay:.28s}.d4{animation-delay:.42s}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rise{animation:none;opacity:1;transform:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  .aura i{animation:none}
+  *{transition-duration:.001ms !important}
+}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <span class="nav-brand">LH_PORTFOLIO</span>
-    <div class="nav-links">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#security-scan">Scan</a>
-      <a href="#tooling">Tooling</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="#contact" class="nav-cta">Let's Talk →</a>
-  </nav>
+<div class="aura" aria-hidden="true"><i class="g1"></i><i class="g2"></i><i class="g3"></i></div>
+<div class="grain" aria-hidden="true"></div>
 
-  <!-- HERO -->
-  <section id="home" class="hero-section">
-    <div class="hero-inner">
-      <div class="hero-text fade-up">
-        <p class="eyebrow">Junior Cybersecurity Professional</p>
-        <h1>Levi<br><span class="accent">Hekman</span></h1>
-        <p class="hero-sub">Looking for a junior pentesting role or internship — while sharpening offensive security skills through hands-on assessments, threat research, and tools like the one below.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">View Projects →</a>
-          <a href="CV_Levi_Hekman.pdf" target="_blank" download class="btn-ghost">Download CV</a>
+<div class="page">
+<header class="nav">
+  <div class="nav-in">
+    <a class="mark" href="#top"><b>LH</b>Levi Hekman</a>
+    <ul>
+      <li><a href="#check">Gratis check</a></li>
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#werk">Werk</a></li>
+      <li><a href="#werkwijze">Werkwijze</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-g btn-s" href="#contact">Plan een kennismaking</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow rise d1">Cyber security &amp; AI voor het MKB</p>
+        <h1 class="rise d2">Ik bouw en <em>beveilig</em> de systemen waar je bedrijf op draait.</h1>
+        <p class="lead rise d3">Van een boekingsplatform dat een studio draaiende houdt tot AI-agents die elke maandagochtend het rooster klaarzetten — met beveiliging die er vanaf de eerste regel in zit. Voor ondernemers die willen weten waar ze staan, zonder consultancytaal.</p>
+        <div class="hero-cta rise d3">
+          <a class="btn btn-g" href="#contact">Plan een kennismaking</a>
+          <a class="btn btn-o" href="#check">Doe de gratis check</a>
+        </div>
+        <div class="chips rise d4">
+          <span class="chip">Beschikbaar voor opdrachten</span>
+          <span class="chip alt">Bollenstreek &amp; op afstand</span>
+          <span class="chip neutral">Ook open voor een vaste rol in cyber security</span>
         </div>
       </div>
-      <div class="hero-photo-wrap fade-up">
-        <img src="images/levi.jpg" alt="Levi Hekman" class="hero-photo">
-        <div class="terminal-badge">status: open to junior roles</div>
+      <figure class="portrait rise d4">
+        <img src="images/levi-warm.webp" alt="Levi Hekman" width="588" height="694">
+        <figcaption><b>Levi Hekman</b>Security &amp; AI · Nederland</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="check">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Gratis · twee minuten · niets opgeslagen</p>
+      <h2>Hoe veilig is je bedrijf op dit moment?</h2>
+      <p class="lead">Zes vragen over de dingen die in de praktijk daadwerkelijk misgaan. Je krijgt meteen een score en de twee punten die ik als eerste zou aanpakken. Geen account, geen e-mailadres, niets wordt bewaard.</p>
+    </div>
+
+    <div class="scan reveal">
+      <div class="scan-top">
+        <span class="t">Nulmeting — zes vragen</span>
+        <span class="prog"><span class="track"><span class="fill" id="fill"></span></span><span id="count">0 van 6</span></span>
+      </div>
+      <div id="qs"></div>
+      <div class="scan-foot" id="foot">
+        <span class="hint">Je antwoorden blijven in je browser. Er wordt niets verstuurd.</span>
+        <button class="btn btn-g" id="go" disabled>Toon mijn score</button>
+      </div>
+      <div class="result" id="result" tabindex="-1">
+        <div class="res-head">
+          <div class="score" id="ring"><span id="pct">0<i>%</i></span></div>
+          <div>
+            <h3 id="band">—</h3>
+            <p id="verdict"></p>
+          </div>
+        </div>
+        <div class="gaps" id="gaps"></div>
+        <div class="res-cta">
+          <a class="btn btn-g" href="#contact">Bespreek je uitkomst</a>
+          <button class="btn btn-o" id="again">Opnieuw</button>
+          <span class="small">Dit is een startpunt voor een gesprek, geen audit.</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <hr class="divider">
-
-  <!-- ABOUT -->
-  <section id="about" class="section fade-up">
-    <p class="section-label">01 — About</p>
-    <h2>Professional Summary</h2>
-    <p class="about-text">Cybersecurity professional trained through the <strong>Ethical Hacker bootcamp at NOVI College Utrecht</strong> — an intensive HBO-level program focused on applied security and real-world attack scenarios. I completed two parallel learning tracks: <strong>Organisation Security</strong> and <strong>Systems Security</strong>, where theoretical concepts were consistently translated into hands-on assignments.</p>
-    <p class="about-text" style="margin-top: 16px;">My focus lies in <strong>offensive security, web application testing, and vulnerability analysis</strong> — with strong attention to scope, impact, and remediation. I translate technical findings into clear, risk-based recommendations that organizations can act on.</p>
-    <div class="stats-row">
-      <div class="stat">
-        <div class="stat-num">4</div>
-        <div class="stat-label">Security Projects</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">OWASP</div>
-        <div class="stat-label">Methodology</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">HBO</div>
-        <div class="stat-label">Bootcamp Level</div>
-      </div>
+  <section class="sec wrap" id="diensten">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Wat ik doe</p>
+      <h2>Drie dingen, en daar ben ik eerlijk over.</h2>
+      <p class="lead">Geen brede dienstenwaaier. Dit is waar ik werk heb afgeleverd en waar ik het bewijs voor kan laten zien.</p>
     </div>
-    <div class="venture-note">
-      <span class="venture-label">↳ also building</span>
-      <a href="http://helderbeveiligd.nl/" target="_blank" rel="noopener noreferrer" class="venture-link">Helder Beveiligd ↗</a>
-      <span class="venture-desc">— a security consultancy for SMEs, currently in development</span>
-    </div>
-  </section>
+    <div class="svcs">
 
-  <hr class="divider">
+      <article class="svc reveal">
+        <span class="n">01 — Beveiliging</span>
+        <h3>Weten waar je staat</h3>
+        <p>Een eerlijke nulmeting tegen ISO 27001 en de AVG, in gewone taal. Geen lijst met honderd punten, maar een rangorde: dit eerst, dit later, dit kun je laten liggen.</p>
+        <ul>
+          <li>Nulmeting met score en prioriteiten</li>
+          <li>Beleid dat klopt met wat je écht doet</li>
+          <li>Een rapport dat je aan een klant of verzekeraar kunt laten zien</li>
+        </ul>
+        <p class="pf">Bewijs: <a href="#werk">HelderBeveiligd</a> · ISO 27001-opleiding</p>
+      </article>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section fade-up">
-    <p class="section-label">02 — Work</p>
-    <h2>Selected Security Projects</h2>
-    <div class="projects-grid">
+      <article class="svc reveal">
+        <span class="n">02 — AI</span>
+        <h3>Werk uit handen, mens aan het stuur</h3>
+        <p>AI-agents die draaien op jouw eigen bedrijfsgegevens in plaats van op algemeenheden. Roosters, klantvragen, content, terugkerend uitzoekwerk.</p>
+        <ul>
+          <li>Agents die werken met je echte agenda en tarieven</li>
+          <li>Altijd concepten ter goedkeuring, nooit automatisch naar buiten</li>
+          <li>Ingericht met de beveiligingsvraag erbij: wat als de invoer kwaadwillend is?</li>
+        </ul>
+        <p class="pf">Bewijs: <a href="#werk">Studio Noorderfabriek</a></p>
+      </article>
 
-      <div class="project-card">
-        <div class="project-num">01</div>
-        <h3>ISO 27001 Compliance Audit &amp; Risk Assessment</h3>
-        <div class="project-meta">
-          <div class="meta-row"><span class="meta-key">Context</span><span class="meta-val">Organisation Security eindopdracht (30 EC)</span></div>
-          <div class="meta-row"><span class="meta-key">Scope</span><span class="meta-val">Governance, ISO/IEC 27001:2022 audit, SANS Maturity Model</span></div>
-          <div class="meta-row"><span class="meta-key">Findings</span><span class="meta-val">Gaps in vuln. management, segmentation, data classification</span></div>
-          <div class="meta-row"><span class="meta-key">Outcome</span><span class="meta-val">Remediation roadmap: SIEM/UEBA, Zero Trust, maturity level 2 → 3</span></div>
-        </div>
-        <span class="project-tag">ISO 27001 · HBO Level</span>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">02</div>
-        <h3>Threat Intelligence &amp; Forensics — Equifax Case Study</h3>
-        <div class="project-meta">
-          <div class="meta-row"><span class="meta-key">Context</span><span class="meta-val">Organisation Security — dreigingslandschap</span></div>
-          <div class="meta-row"><span class="meta-key">Scope</span><span class="meta-val">Threat actor profiling, OSINT, Cyber Kill Chain</span></div>
-          <div class="meta-row"><span class="meta-key">Approach</span><span class="meta-val">Reconstructed the 2017 Equifax breach (CVE-2017-5638)</span></div>
-          <div class="meta-row"><span class="meta-key">Outcome</span><span class="meta-val">Forensic investigation plan &amp; legal impact analysis</span></div>
-        </div>
-        <span class="project-tag">Threat Intel · HBO Level</span>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">03</div>
-        <h3>Network, OS &amp; Application Security Blueprint</h3>
-        <div class="project-meta">
-          <div class="meta-row"><span class="meta-key">Context</span><span class="meta-val">Systems Security eindopdracht — NovaTech B.V.</span></div>
-          <div class="meta-row"><span class="meta-key">Scope</span><span class="meta-val">Network recon, OS hardening, PTES/OWASP app review</span></div>
-          <div class="meta-row"><span class="meta-key">Findings</span><span class="meta-val">Vulnerable Apache host, open SMTP relay, EternalBlue exposure</span></div>
-          <div class="meta-row"><span class="meta-key">Outcome</span><span class="meta-val">Consolidated hardening &amp; remediation blueprint</span></div>
-        </div>
-        <span class="project-tag">PTES · HBO Level</span>
-      </div>
-
-      <div class="project-card">
-        <div class="project-num">04</div>
-        <h3>NovaTech CTF — Multi-Stage Exploit Chain Design</h3>
-        <div class="project-meta">
-          <div class="meta-row"><span class="meta-key">Context</span><span class="meta-val">Systems Security — Challenge Design</span></div>
-          <div class="meta-row"><span class="meta-key">Scope</span><span class="meta-val">Built &amp; tested a Dockerized, cross-platform CTF</span></div>
-          <div class="meta-row"><span class="meta-key">Approach</span><span class="meta-val">LFI → log poisoning → RCE → cronjob privilege escalation</span></div>
-          <div class="meta-row"><span class="meta-key">Outcome</span><span class="meta-val">Fully documented exploit chain for peer students</span></div>
-        </div>
-        <span class="project-tag">CTF Design · HBO Level</span>
-      </div>
+      <article class="svc reveal">
+        <span class="n">03 — Bouw</span>
+        <h3>Systemen die het houden</h3>
+        <p>Webplatforms en boekingssystemen die jaren meegaan, draaien zonder onderhoudsabonnement en die je daarna zelf kunt beheren.</p>
+        <ul>
+          <li>Next.js op Vercel, database op Neon</li>
+          <li>Misbruikbestendig ontworpen, niet achteraf dichtgetimmerd</li>
+          <li>Overdracht inbegrepen — je zit niet aan mij vast</li>
+        </ul>
+        <p class="pf">Bewijs: <a href="#werk">Boekingsplatform Noorderfabriek</a></p>
+      </article>
 
     </div>
   </section>
 
-  <hr class="divider">
+  <section class="sec wrap" id="werk">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Bewijs</p>
+      <h2>Wat ik gebouwd heb, en wat ik ervan geleerd heb.</h2>
+      <p class="lead">Alles hieronder bestaat echt en is te bekijken. Waar iets nog niet af is, staat dat erbij.</p>
+    </div>
+    <div class="cases">
 
-  <!-- SECURITY SCAN -->
-  <section id="security-scan" class="section fade-up">
-    <p class="section-label">03 — Interactive Tool</p>
-    <h2>Free Security Scan</h2>
-    <p class="about-text" style="margin-bottom: 24px;">Most small businesses have never had their security checked — not because it isn't important, but because a professional assessment is expensive and hard to access. This scan changes that.</p>
-    <p class="about-text" style="margin-bottom: 32px;">In 5 minutes, you get a clear picture of where your organisation stands on information security. You'll see your score, the gaps that put you at risk, and exactly what to fix first — based on the same ISO 27001 framework that auditors and enterprise security teams use.</p>
-
-    <div class="scan-pitch">
-      <div class="pitch-item">
-        <span class="pitch-icon">⚡</span>
+      <article class="case reveal">
         <div>
-          <div class="pitch-title">Instant compliance score</div>
-          <div class="pitch-sub">A percentage that tells you honestly how your organisation compares to the ISO 27001 standard — the benchmark for information security.</div>
+          <h3>Studio Noorderfabriek</h3>
+          <span class="meta">Web &amp; platform developer · sinds februari 2026</span>
         </div>
-      </div>
-      <div class="pitch-item">
-        <span class="pitch-icon">🎯</span>
         <div>
-          <div class="pitch-title">Prioritised action list</div>
-          <div class="pitch-sub">Not a vague report — a ranked list of your actual gaps, sorted by risk level, so you know exactly where to start.</div>
+          <p>Een compleet boekingsplatform op Next.js dat hun WordPress-site vervangt: reserveringen, strippenkaarten en een nieuwsbriefkorting die ook echt werkt in de afrekening. Daarnaast draaien er AI-agents in Slack die de echte agenda uitlezen en het weekrooster voorbereiden — en die navragen in plaats van gokken als een boeking onduidelijk is.</p>
+          <p style="margin-top:.8rem">De beveiligingsbeslissing waar ik het meest aan heb gehad: één kortingscode per e-mailadres. Een code die je oneindig opnieuw kunt aanmaken is geen functie, dat is een lek.</p>
+          <div class="ev">
+            <span>Next.js · Vercel · Neon</span><span>Slack-agents</span><span>Boekingen, strippenkaarten, kortingscodes</span>
+          </div>
         </div>
-      </div>
-      <div class="pitch-item">
-        <span class="pitch-icon">💬</span>
+      </article>
+
+      <article class="case reveal">
         <div>
-          <div class="pitch-title">Free consultation</div>
-          <div class="pitch-sub">After the scan, you can reach out directly. I'll look at your results and tell you what I'd tackle first — no commitment required.</div>
+          <h3>HelderBeveiligd</h3>
+          <span class="meta">Eigen product · in ontwikkeling</span>
         </div>
-      </div>
-    </div>
-
-    <p class="scan-who-is-this">Who is this for? — Any business that handles customer data, works with external partners, or wants to be prepared before a client or auditor asks the difficult questions.</p>
-    <p class="scan-no-obligation">No account. No data stored. No strings attached — just a clear picture of where you stand.</p>
-
-    <div class="scan-card">
-      <div class="scan-card-header">
-        <div class="scan-card-title">~ security_scan.sh</div>
-        <div class="scan-status"><div class="status-dot"></div>live — no data stored</div>
-      </div>
-
-      <div class="form-body" id="form-view">
-        <div class="company-row">
-          <span class="company-prompt">~ company</span>
-          <input type="text" id="company-input" placeholder="Enter your company name to start..." autocomplete="off" oninput="handleCompanyInput(this.value)">
-        </div>
-
-        <div id="scan-questions-wrap" class="scan-questions-hidden">
-          <div class="progress-row">
-            <span class="progress-label" id="prog-label">0 / 30 answered</span>
-            <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-          </div>
-          <div id="questions-container"></div>
-          <button class="btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="runScan()">Run security analysis →</button>
-        </div>
-      </div>
-
-      <div class="result-body" id="result-view" style="display: none;">
-        <div class="score-block">
-          <div id="result-score">—</div>
-          <div class="progress-track" style="max-width: 300px; margin: 12px auto;"><div class="progress-fill" id="result-bar"></div></div>
-          <div id="result-niveau">Calculating...</div>
-        </div>
-        <div class="findings-label">→ FINDINGS (BY PRIORITY)</div>
-        <div id="findings-list" class="findings-list"></div>
-        <div class="cta-card">
-          <h3 class="cta-title">Next step — Full security policy document</h3>
-          <p class="cta-sub">Based on your scan results, I can generate a tailored Information Security Policy (ISP) — legally recognised by auditors and data protection authorities.</p>
-          <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 0;">Request full report →</a>
-        </div>
-        <p class="reset-link" onclick="resetScan()">← Start a new scan</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- TOOLING -->
-  <section id="tooling" class="section fade-up">
-    <p class="section-label">04 — Tooling</p>
-    <h2>Technologies &amp; Tools</h2>
-    <p class="tools-note">Tooling supports manual analysis — it does not substitute for methodology.</p>
-    <div class="tools-wrap">
-      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Kali Linux</span></div>
-      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Nmap</span></div>
-      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Burp Suite</span></div>
-      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Metasploit</span></div>
-      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">SQLmap</span></div>
-      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Wireshark</span></div>
-      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Linux / Bash</span></div>
-      <div class="tool-pill"><div class="tool-dot"></div><span class="tool-name">Git &amp; GitHub</span></div>
-    </div>
-
-    <div class="certs-block">
-      <p class="section-label" style="margin-bottom: 20px;">Certifications &amp; Training</p>
-      <div class="certs-row">
-        <div class="cert-badge">
-          <div class="cert-icon">NOVI</div>
-          <div class="cert-info">
-            <div class="cert-name">Ethical Hacker Bootcamp</div>
-            <div class="cert-sub">NOVI College Utrecht · HBO</div>
+        <div>
+          <p>Een compliance-cockpit voor MKB-bedrijven die moeten kunnen aantónen dat ze veilig werken, niet alleen hopen dat ze het zijn. Het leest je beleidsdocumenten, koppelt elke regel aan ISO 27001, NIS2 en de AVG, en laat per control zien welk document hem dekt en wat er nog ontbreekt.</p>
+          <p style="margin-top:.8rem">Het uitgangspunt dat ik overal aanhoud: geen score zonder bewijs. Elk cijfer is te herleiden naar een document — geen zwarte doos.</p>
+          <div class="ev">
+            <a href="https://helderbeveiligd.nl">helderbeveiligd.nl ↗</a><span>AVG · NIS2 · ISO 27001</span><span>Live demo beschikbaar</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <hr class="divider">
-
-  <!-- CONTACT -->
-  <section id="contact" class="section fade-up">
-    <p class="section-label">05 — Contact</p>
-    <h2>Let's Talk</h2>
-    <div class="contact-layout">
-
-      <div class="contact-info">
-        <p class="contact-intro">Open to junior pentesting roles, freelance assessments, and security internships.</p>
-        <a href="mailto:levihekman@icloud.com" class="contact-link">
-          <div class="cl-icon">@</div>
-          <div>
-            <div class="cl-label">Email</div>
-            <div class="cl-val">levihekman@icloud.com</div>
-          </div>
-        </a>
-        <a href="https://www.linkedin.com/in/levi-hekman/" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <div class="cl-icon">in</div>
-          <div>
-            <div class="cl-label">LinkedIn</div>
-            <div class="cl-val">linkedin.com/in/levi-hekman</div>
-          </div>
-        </a>
-        <a href="https://github.com/levihekm243" target="_blank" class="contact-link">
-          <div class="cl-icon">gh</div>
-          <div>
-            <div class="cl-label">GitHub</div>
-            <div class="cl-val">github.com/levihekm243</div>
-          </div>
-        </a>
-        <a href="CV_Levi_Hekman.pdf" target="_blank" download class="contact-link">
-          <div class="cl-icon">cv</div>
-          <div>
-            <div class="cl-label">Resume</div>
-            <div class="cl-val">Download PDF →</div>
-          </div>
-        </a>
-      </div>
-
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
+      <article class="case reveal">
+        <div>
+          <h3>Gratis ISO 27001-check</h3>
+          <span class="meta">Gereedschap · vrij te gebruiken</span>
         </div>
-        <input type="text" name="subject" placeholder="Subject">
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit" class="btn-primary">Send Message →</button>
-      </form>
+        <div>
+          <p>Dertig vragen, gekoppeld aan echte ISO 27001-controls. Je krijgt een eerlijke score en een geprioriteerde lijst met hiaten, zonder account en zonder dat er iets wordt opgeslagen. Gemaakt omdat een professionele beoordeling voor de meeste kleine bedrijven onbetaalbaar is — en omdat het schrijven van de scoringslogica mij dwong de norm écht te begrijpen.</p>
+          <div class="ev"><a href="#check">Probeer de korte versie hierboven</a><span>30 controls</span></div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div>
+          <h3>Ethical Hacker bootcamp, NOVI</h3>
+          <span class="meta">In opleiding · HBO-niveau</span>
+        </div>
+        <div>
+          <p>Ik volg de opleiding nog en ben er dus niet mee klaar — dat zeg ik liever zelf dan dat je het later ontdekt. Vier opdrachten, over beide sporen: een exploitketen die ik van begin tot eind zelf bouwde en documenteerde (LFI → log poisoning → remote code execution → privilege escalation via cron), een netwerk- en systeemonderzoek, een ISO 27001-audit met een volwassenheidsroadmap, en een forensische reconstructie van het Equifax-datalek.</p>
+          <p style="margin-top:.8rem">Dit zijn opleidingsopdrachten, geen klantopdrachten. NovaTech B.V. is een fictief bedrijf uit de lesstof.</p>
+          <div class="ev"><span>OWASP · PTES · ISO 27001</span><span>Organisatie- &amp; systeembeveiliging</span></div>
+        </div>
+      </article>
 
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <span class="footer-brand">Levi Hekman</span>
-    <div class="footer-links">
-      <a href="https://github.com/levihekm243" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/levi-hekman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="CV_Levi_Hekman.pdf" target="_blank" download>CV</a>
+  <section class="sec wrap" id="werkwijze">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Werkwijze</p>
+      <h2>Je weet vooraf wat het wordt en wat het kost.</h2>
+      <p class="lead">Geen offertetraject van weken en geen nacalculatie achteraf.</p>
     </div>
-    <span class="footer-copy">&copy; <span id="footer-year">2025</span> — All rights reserved</span>
+    <div class="steps reveal">
+      <div class="step"><span class="n">01</span><h3>Kennismaken</h3><p>Een half uur, gratis, zonder verplichting. Ik vertel ook eerlijk wanneer ik denk dat je mij niet nodig hebt.</p></div>
+      <div class="step"><span class="n">02</span><h3>Nulmeting</h3><p>Ik kijk mee in wat je hebt staan en je krijgt een eerlijk beeld: wat goed gaat, wat risico oplevert, wat kan wachten.</p></div>
+      <div class="step"><span class="n">03</span><h3>Voorstel</h3><p>Een afgebakende opdracht met een prijs die we vooraf afspreken. Je weet precies wat je krijgt voordat we beginnen.</p></div>
+      <div class="step"><span class="n">04</span><h3>Uitvoeren &amp; overdragen</h3><p>Ik lever op, leg uit hoe het werkt en zorg dat je het zelf kunt beheren. Je zit niet aan mij vast.</p></div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="over">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">Over mij</p>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);margin-block:1.1rem 1.4rem">Ik ben degene die het bouwt én degene die het aanvalt.</h2>
+        <div class="prose">
+          <p>Ik volg de <b>Ethical Hacker bootcamp op HBO-niveau bij NOVI</b> en ben daar nog niet mee klaar. Tegelijk bouw en beheer ik sinds februari 2026 het platform van <b>Studio Noorderfabriek</b>: een echt systeem, met echte klanten en echte reserveringen.</p>
+          <p>Die combinatie is waarom ik dit werk doe zoals ik het doe. Wie alleen test, ziet een lijst met bevindingen. Wie het ook moet bouwen en draaiend houden, weet welke bevinding er maandagochtend toe doet en welke theorie is.</p>
+          <p>Ik werk voor ondernemers die geen securityafdeling hebben en ook geen zin hebben in een rapport van tachtig pagina's dat niemand leest. <b>Je krijgt van mij geen jargon en geen bangmakerij</b> — wel een eerlijk beeld en een volgorde.</p>
+        </div>
+      </div>
+      <aside class="panel reveal">
+        <h3>In het kort</h3>
+        <dl class="deflist">
+          <dt>Diensten</dt><dd>Beveiliging &amp; compliance, AI-integratie, platformbouw</dd>
+          <dt>Werkgebied</dt><dd>Bollenstreek en omgeving, en op afstand</dd>
+          <dt>Opleiding</dt><dd>Ethical Hacker bootcamp (HBO), NOVI — nog lopend</dd>
+          <dt>Talen</dt><dd>Nederlands en Engels</dd>
+          <dt>Beschikbaar</dt><dd>In overleg</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="werkgevers">
+    <div class="split">
+      <div class="reveal">
+        <p class="eyebrow">Voor werkgevers</p>
+        <h2 style="font-size:clamp(1.6rem,3.2vw,2.2rem);margin-block:1.1rem 1.2rem">Ook open voor een vaste rol in cyber security.</h2>
+        <p class="prose">Naast mijn eigen opdrachten sta ik open voor een plek in een securityteam — SOC, security engineering, GRC of pentesting. Ik ben nog in opleiding, dus ik zoek een rol waar ik kan leren van mensen die verder zijn. Wat ik meebreng is dat ik zelf bouw en beheer, en dus weet wat een advies in de praktijk kost om uit te voeren.</p>
+        <div class="hero-cta" style="margin-top:1.8rem">
+          <a class="btn btn-g" href="CV_Levi_Hekman.pdf">Download mijn cv</a>
+          <a class="btn btn-o" href="https://www.linkedin.com/in/levi-hekman/">LinkedIn</a>
+          <a class="btn btn-o" href="portfolio.html">Engelstalig portfolio</a>
+        </div>
+      </div>
+      <aside class="panel reveal">
+        <h3>Wat ik zoek</h3>
+        <dl class="deflist">
+          <dt>Rollen</dt><dd>SOC-analist, security engineer, GRC, junior pentester</dd>
+          <dt>Niveau</dt><dd>Junior — met begeleiding van ervaren collega's</dd>
+          <dt>Vorm</dt><dd>Vast, detachering of stage</dd>
+          <dt>Regio</dt><dd>Randstad, of hybride</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="contact wrap" id="contact">
+    <p class="eyebrow" style="justify-content:center">Contact</p>
+    <h2 style="margin-top:1.2rem">Laten we een half uur praten.</h2>
+    <p class="lead">Geen verkooppraatje. Je vertelt wat je hebt staan en waar je 's nachts van wakker ligt, en ik zeg eerlijk of ik je kan helpen — en wat het ongeveer gaat kosten.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a class="btn btn-g" href="mailto:levihekman@icloud.com">levihekman@icloud.com</a>
+      <a class="btn btn-o" href="#check">Eerst de gratis check</a>
+    </div>
+    <div class="cgrid">
+      <a class="citem" href="mailto:levihekman@icloud.com"><span class="k">E-mail</span><span class="v">levihekman@icloud.com</span></a>
+      <a class="citem" href="https://www.linkedin.com/in/levi-hekman/"><span class="k">LinkedIn</span><span class="v">in/levi-hekman</span></a>
+      <a class="citem" href="https://github.com/levihekm243"><span class="k">GitHub</span><span class="v">levihekm243</span></a>
+      <a class="citem" href="https://helderbeveiligd.nl"><span class="k">Product</span><span class="v">helderbeveiligd.nl ↗</span></a>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <span>© 2026 Levi Hekman</span>
+    <span>Nederland · Nederlands &amp; Engels</span>
   </footer>
+</main>
+</div>
 
+<script>
+(function(){
+  var VRAGEN = [
+    {t:"Staat er tweestapsverificatie op je e-mail en cloudopslag?", s:"De meeste inbraken bij kleine bedrijven beginnen bij een gestolen wachtwoord.", g:"Toegangsbeveiliging", a:"Zet tweestapsverificatie aan op e-mail, cloudopslag en je boekhoudpakket. Dit is de goedkoopste maatregel met het grootste effect."},
+    {t:"Heb je het afgelopen jaar een back-up daadwerkelijk teruggezet?", s:"Een back-up die je nooit getest hebt, is een aanname.", g:"Herstel na incident", a:"Zet één keer per jaar een back-up terug in een testomgeving. Pas dan weet je of je hem echt hebt."},
+    {t:"Is vastgelegd wie toegang heeft tot welke systemen?", s:"Denk ook aan oud-medewerkers, stagiairs en leveranciers.", g:"Toegangsrechten", a:"Maak een overzicht van accounts per systeem en loop het elk kwartaal na. Oud-medewerkers zijn het vaakst vergeten risico."},
+    {t:"Weet je welke persoonsgegevens je verwerkt en waar die staan?", s:"Dit is de basis van de AVG — en de eerste vraag bij een datalek.", g:"AVG / persoonsgegevens", a:"Leg vast welke persoonsgegevens je verwerkt, waarom, en waar ze staan. Zonder dat overzicht kun je een datalek niet melden."},
+    {t:"Heb je afspraken met leveranciers over beveiliging en datalekken?", s:"Je websitebouwer en je boekhouder verwerken vaak jouw klantgegevens.", g:"Leveranciers", a:"Leg per leverancier vast wie waarvoor verantwoordelijk is en binnen hoeveel tijd zij een incident melden."},
+    {t:"Is er een plan voor als het misgaat — wie belt wie, en hoe snel?", s:"Op het moment zelf is er geen tijd om dit te bedenken.", g:"Incidentplan", a:"Schrijf één A4: wie beslist, wie belt de klanten, wie de verzekeraar, en binnen welke termijn. Meer is het niet."}
+  ];
+  var antw = {}, qs = document.getElementById('qs');
+
+  VRAGEN.forEach(function(v, i){
+    var row = document.createElement('div');
+    row.className = 'q';
+    var left = document.createElement('div');
+    left.innerHTML = '<span class="qt">' + v.t + '</span><span class="qs">' + v.s + '</span>';
+    var opts = document.createElement('div');
+    opts.className = 'opts';
+    opts.setAttribute('role','group');
+    opts.setAttribute('aria-label', v.t);
+    [['Ja',2],['Deels',1],['Nee',0]].forEach(function(o){
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = o[0];
+      b.setAttribute('aria-pressed','false');
+      b.addEventListener('click', function(){
+        Array.prototype.forEach.call(opts.children, function(c){ c.setAttribute('aria-pressed','false'); });
+        b.setAttribute('aria-pressed','true');
+        antw[i] = o[1];
+        update();
+      });
+      opts.appendChild(b);
+    });
+    row.appendChild(left); row.appendChild(opts); qs.appendChild(row);
+  });
+
+  var go = document.getElementById('go'), fill = document.getElementById('fill'), count = document.getElementById('count');
+  function update(){
+    var n = Object.keys(antw).length;
+    count.textContent = n + ' van ' + VRAGEN.length;
+    fill.style.width = (n / VRAGEN.length * 100) + '%';
+    go.disabled = n < VRAGEN.length;
+  }
+
+  function toon(){
+    var totaal = 0;
+    for (var k in antw) totaal += antw[k];
+    var pct = Math.round(totaal / (VRAGEN.length * 2) * 100);
+
+    var band, oordeel;
+    if (pct >= 80){ band = 'Je staat er goed voor.';
+      oordeel = 'De basis is op orde. De winst zit nu in vastleggen en aantoonbaar maken — zodat je het ook kunt laten zien aan een klant, auditor of verzekeraar.'; }
+    else if (pct >= 50){ band = 'De basis staat, de afwerking niet.';
+      oordeel = 'Je hebt de belangrijkste dingen geregeld, maar er zitten gaten waar in de praktijk juist incidenten door ontstaan. Met een paar gerichte stappen is dit snel een stuk steviger.'; }
+    else if (pct >= 25){ band = 'Hier valt veel te winnen.';
+      oordeel = 'Een aantal fundamenten ontbreekt. Dat is geen ramp en ook niet ongewoon voor een klein bedrijf — maar het betekent wel dat één fout nu een groot probleem kan worden.'; }
+    else { band = 'Dit vraagt op korte termijn aandacht.';
+      oordeel = 'Op dit moment is er weinig dat je beschermt als er iets misgaat. Het goede nieuws: de eerste twee maatregelen hieronder kosten vrijwel niets en halen het grootste risico er al af.'; }
+
+    document.getElementById('band').textContent = band;
+    document.getElementById('verdict').textContent = oordeel;
+    document.getElementById('pct').innerHTML = pct + '<i>%</i>';
+    document.getElementById('ring').style.setProperty('--deg', (pct * 3.6) + 'deg');
+
+    var zwak = VRAGEN.map(function(v,i){ return {v:v, s:antw[i]}; })
+                     .filter(function(x){ return x.s < 2; })
+                     .sort(function(a,b){ return a.s - b.s; })
+                     .slice(0,2);
+    var gaps = document.getElementById('gaps');
+    gaps.innerHTML = '';
+    if (!zwak.length){
+      gaps.innerHTML = '<p style="color:var(--muted);font-size:.93rem">Op deze zes punten scoor je volledig. De logische vervolgstap is de uitgebreide check van dertig controls.</p>';
+    } else {
+      zwak.forEach(function(x){
+        var el = document.createElement('div');
+        el.className = 'gap';
+        el.innerHTML = '<span class="sev ' + (x.s === 0 ? 'hoog' : 'midden') + '">' + (x.s === 0 ? 'hoog' : 'midden') + '</span>' +
+                       '<span><b>' + x.v.g + '</b><span>' + x.v.a + '</span></span>';
+        gaps.appendChild(el);
+      });
+    }
+    document.getElementById('qs').style.display = 'none';
+    document.getElementById('foot').style.display = 'none';
+    document.getElementById('result').classList.add('on');
+    document.getElementById('result').focus();
+  }
+
+  go.addEventListener('click', toon);
+  document.getElementById('again').addEventListener('click', function(){
+    antw = {};
+    Array.prototype.forEach.call(document.querySelectorAll('.opts button'), function(b){ b.setAttribute('aria-pressed','false'); });
+    document.getElementById('qs').style.display = '';
+    document.getElementById('foot').style.display = '';
+    document.getElementById('result').classList.remove('on');
+    update();
+    document.getElementById('check').scrollIntoView({block:'start'});
+  });
+  update();
+})();
+
+(function(){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
