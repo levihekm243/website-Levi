@@ -188,7 +188,7 @@
       <div class="form-body" id="form-view">
         <div class="company-row">
           <span class="company-prompt">~ company</span>
-          <input type="text" id="company-input" placeholder="Enter your company name to start..." autocomplete="off" oninput="handleCompanyInput(this.value)">
+          <input type="text" id="company-input" placeholder="Enter your company name to start..." autocomplete="off">
         </div>
 
         <div id="scan-questions-wrap" class="scan-questions-hidden">
@@ -197,7 +197,7 @@
             <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
           </div>
           <div id="questions-container"></div>
-          <button class="btn-primary u-wide-btn u-mt2"  onclick="runScan()">Run security analysis →</button>
+          <button class="btn-primary u-wide-btn u-mt2" id="run-scan">Run security analysis →</button>
         </div>
       </div>
 
@@ -214,7 +214,7 @@
           <p class="cta-sub">Based on your scan results, I can generate a tailored Information Security Policy (ISP) — legally recognised by auditors and data protection authorities.</p>
           <a href="#contact" class="btn-primary u-wide-btn" >Request full report →</a>
         </div>
-        <p class="reset-link" onclick="resetScan()">← Start a new scan</p>
+        <p class="reset-link" id="reset-link" role="button" tabindex="0">← Start a new scan</p>
       </div>
     </div>
   </section>

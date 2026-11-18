@@ -273,3 +273,7 @@ footer{border-top:1px solid var(--line);padding-block:1.8rem;display:flex;justif
 .h2-sub{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-block:1.1rem 1.4rem}
 .h2-sub.is-compact{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-block:1.1rem 1.2rem}
 .gap-leeg{color:var(--muted);font-size:.93rem}
+
+/* footerlinks */
+.foot-links a{color:var(--muted);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.foot-links a:hover{color:var(--gold-ink);border-color:rgba(211,160,84,.4)}

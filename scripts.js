@@ -218,9 +218,9 @@ function buildQuestions() {
         <span class="q-ref">${v.ref}</span>
         <span class="q-text">${v.q}</span>
         <div class="q-opts">
-          <button class="opt-btn" onclick="pick(${v.idx},'yes',this)">YES</button>
-          <button class="opt-btn" onclick="pick(${v.idx},'partial',this)">PARTIAL</button>
-          <button class="opt-btn" onclick="pick(${v.idx},'no',this)">NO</button>
+          <button class="opt-btn" data-idx="${v.idx}" data-val="yes">YES</button>
+          <button class="opt-btn" data-idx="${v.idx}" data-val="partial">PARTIAL</button>
+          <button class="opt-btn" data-idx="${v.idx}" data-val="no">NO</button>
         </div>
       </div>`).join('');
 
@@ -345,3 +345,23 @@ function resetScan() {
 }
 
 buildQuestions();
+
+// ── 7. EVENT HANDLERS (voorheen inline onclick/oninput) ─────────────────────
+// Inline handlers worden geblokkeerd door de Content-Security-Policy; daarom
+// hier gekoppeld. Eventdelegatie, want de vraagknoppen worden later gebouwd.
+document.addEventListener('click', function (e) {
+  var opt = e.target.closest ? e.target.closest('.opt-btn') : null;
+  if (opt && opt.dataset.idx !== undefined) {
+    pick(Number(opt.dataset.idx), opt.dataset.val, opt);
+    return;
+  }
+  if (e.target.id === 'run-scan') runScan();
+  if (e.target.id === 'reset-link') resetScan();
+});
+document.addEventListener('keydown', function (e) {
+  if (e.target.id === 'reset-link' && (e.key === 'Enter' || e.key === ' ')) {
+    e.preventDefault(); resetScan();
+  }
+});
+var _ci = document.getElementById('company-input');
+if (_ci) _ci.addEventListener('input', function () { handleCompanyInput(this.value); });
