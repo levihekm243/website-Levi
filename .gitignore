@@ -1,0 +1,8 @@
+# De repo-root wordt door GitHub Pages één op één gepubliceerd, en .nojekyll
+# betekent dat ook dotfiles en losse bestanden online komen. Alles wat intern
+# is hoort hier, zodat het nooit op levihekman.nl belandt.
+TODO.md
+VERBETERPLAN*.md
+NOTES*.md
+*.local.md
+.DS_Store
