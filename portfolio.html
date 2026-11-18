@@ -7,9 +7,18 @@
   <title>Levi Hekman | Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="scripts.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://levihekman.nl/portfolio.html">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://levihekman.nl/portfolio.html">
+    <meta property="og:title" content="Levi Hekman | Portfolio">
+    <meta property="og:description" content="Junior cybersecurity professional based in the Netherlands.">
+    <meta property="og:image" content="https://levihekman.nl/img/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 </head>
 <body>
 
@@ -53,7 +62,7 @@
     <p class="section-label">01 — About</p>
     <h2>Professional Summary</h2>
     <p class="about-text">Cybersecurity professional trained through the <strong>Ethical Hacker bootcamp at NOVI College Utrecht</strong> — an intensive HBO-level program focused on applied security and real-world attack scenarios. I completed two parallel learning tracks: <strong>Organisation Security</strong> and <strong>Systems Security</strong>, where theoretical concepts were consistently translated into hands-on assignments.</p>
-    <p class="about-text" style="margin-top: 16px;">My focus lies in <strong>offensive security, web application testing, and vulnerability analysis</strong> — with strong attention to scope, impact, and remediation. I translate technical findings into clear, risk-based recommendations that organizations can act on.</p>
+    <p class="about-text u-mt16" >My focus lies in <strong>offensive security, web application testing, and vulnerability analysis</strong> — with strong attention to scope, impact, and remediation. I translate technical findings into clear, risk-based recommendations that organizations can act on.</p>
     <div class="stats-row">
       <div class="stat">
         <div class="stat-num">4</div>
@@ -140,8 +149,8 @@
   <section id="security-scan" class="section fade-up">
     <p class="section-label">03 — Interactive Tool</p>
     <h2>Free Security Scan</h2>
-    <p class="about-text" style="margin-bottom: 24px;">Most small businesses have never had their security checked — not because it isn't important, but because a professional assessment is expensive and hard to access. This scan changes that.</p>
-    <p class="about-text" style="margin-bottom: 32px;">In 5 minutes, you get a clear picture of where your organisation stands on information security. You'll see your score, the gaps that put you at risk, and exactly what to fix first — based on the same ISO 27001 framework that auditors and enterprise security teams use.</p>
+    <p class="about-text u-mb24" >Most small businesses have never had their security checked — not because it isn't important, but because a professional assessment is expensive and hard to access. This scan changes that.</p>
+    <p class="about-text u-mb32" >In 5 minutes, you get a clear picture of where your organisation stands on information security. You'll see your score, the gaps that put you at risk, and exactly what to fix first — based on the same ISO 27001 framework that auditors and enterprise security teams use.</p>
 
     <div class="scan-pitch">
       <div class="pitch-item">
@@ -188,14 +197,14 @@
             <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
           </div>
           <div id="questions-container"></div>
-          <button class="btn-primary" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="runScan()">Run security analysis →</button>
+          <button class="btn-primary u-wide-btn u-mt2"  onclick="runScan()">Run security analysis →</button>
         </div>
       </div>
 
-      <div class="result-body" id="result-view" style="display: none;">
+      <div class="result-body u-hidden" id="result-view" >
         <div class="score-block">
           <div id="result-score">—</div>
-          <div class="progress-track" style="max-width: 300px; margin: 12px auto;"><div class="progress-fill" id="result-bar"></div></div>
+          <div class="progress-track u-narrow" ><div class="progress-fill" id="result-bar"></div></div>
           <div id="result-niveau">Calculating...</div>
         </div>
         <div class="findings-label">→ FINDINGS (BY PRIORITY)</div>
@@ -203,7 +212,7 @@
         <div class="cta-card">
           <h3 class="cta-title">Next step — Full security policy document</h3>
           <p class="cta-sub">Based on your scan results, I can generate a tailored Information Security Policy (ISP) — legally recognised by auditors and data protection authorities.</p>
-          <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center; margin-bottom: 0;">Request full report →</a>
+          <a href="#contact" class="btn-primary u-wide-btn" >Request full report →</a>
         </div>
         <p class="reset-link" onclick="resetScan()">← Start a new scan</p>
       </div>
@@ -229,7 +238,7 @@
     </div>
 
     <div class="certs-block">
-      <p class="section-label" style="margin-bottom: 20px;">Certifications &amp; Training</p>
+      <p class="section-label u-mb20" >Certifications &amp; Training</p>
       <div class="certs-row">
         <div class="cert-badge">
           <div class="cert-icon">NOVI</div>
@@ -282,15 +291,12 @@
         </a>
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <input type="text" name="subject" placeholder="Subject">
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit" class="btn-primary">Send Message →</button>
-      </form>
+      <!-- Het Formspree-formulier dat hier stond wees naar de plaatshouder YOUR_FORM_ID
+           en heeft dus nooit berichten afgeleverd. Vervangen door een directe mailknop,
+           die ook geen gegevens naar een derde partij stuurt.
+           TODO(Levi): wil je toch een formulier, vul dan een echte endpoint in en
+           voeg die host toe aan form-action in de CSP. -->
+      <a class="btn-primary u-wide-btn u-mt2" href="mailto:levihekman@icloud.com?subject=Contact%20via%20levihekman.nl">Send Message →</a>
 
     </div>
   </section>
