@@ -95,11 +95,12 @@ section[id]{scroll-margin-top:5rem}
 .btn{
   display:inline-flex;align-items:center;gap:.5rem;
   padding:.82rem 1.5rem;border-radius:.5rem;font-size:.92rem;font-weight:500;
+  font-family:inherit;background:transparent;border:0;cursor:pointer;
   transition:transform .18s,box-shadow .18s,background .2s,border-color .2s;white-space:nowrap;
 }
 .btn-g{background:linear-gradient(140deg,var(--gold-ink),var(--gold));color:#1a1407}
 .btn-g:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(211,160,84,.8)}
-.btn-o{border:1px solid var(--line-2);color:var(--text)}
+.btn-o{border:1px solid var(--line-2);color:var(--text);background:transparent}
 .btn-o:hover{transform:translateY(-2px);border-color:var(--gold);background:var(--gold-soft)}
 .btn-s{padding:.6rem 1.1rem;font-size:.85rem}
 
@@ -173,8 +174,8 @@ section[id]{scroll-margin-top:5rem}
   background:conic-gradient(var(--gold) var(--deg,0deg), rgba(255,255,255,.07) 0);
   position:relative;
 }
-.score::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--surface)}
-.score span{position:relative;font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--text)}
+.score::after{content:"";position:absolute;z-index:0;inset:7px;border-radius:50%;background:var(--surface)}
+.score span{position:relative;z-index:1;font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--text)}
 .score span i{font-style:normal;font-size:.9rem;color:var(--dim)}
 .res-head h3{font-size:clamp(1.3rem,2.6vw,1.8rem)}
 .res-head p{margin-top:.6rem;color:var(--muted);font-size:.95rem;max-width:48ch}
@@ -554,7 +555,7 @@ footer{border-top:1px solid var(--line);padding-block:1.8rem;display:flex;justif
     {t:"Staat er tweestapsverificatie op je e-mail en cloudopslag?", s:"De meeste inbraken bij kleine bedrijven beginnen bij een gestolen wachtwoord.", g:"Toegangsbeveiliging", a:"Zet tweestapsverificatie aan op e-mail, cloudopslag en je boekhoudpakket. Dit is de goedkoopste maatregel met het grootste effect."},
     {t:"Heb je het afgelopen jaar een back-up daadwerkelijk teruggezet?", s:"Een back-up die je nooit getest hebt, is een aanname.", g:"Herstel na incident", a:"Zet één keer per jaar een back-up terug in een testomgeving. Pas dan weet je of je hem echt hebt."},
     {t:"Is vastgelegd wie toegang heeft tot welke systemen?", s:"Denk ook aan oud-medewerkers, stagiairs en leveranciers.", g:"Toegangsrechten", a:"Maak een overzicht van accounts per systeem en loop het elk kwartaal na. Oud-medewerkers zijn het vaakst vergeten risico."},
-    {t:"Weet je welke persoonsgegevens je verwerkt en waar die staan?", s:"Dit is de basis van de AVG — en de eerste vraag bij een datalek.", g:"AVG / persoonsgegevens", a:"Leg vast welke persoonsgegevens je verwerkt, waarom, en waar ze staan. Zonder dat overzicht kun je een datalek niet melden."},
+    {t:"Weet je welke persoonsgegevens je verwerkt en waar die staan?", s:"Dit is de basis van de AVG — en de eerste vraag bij een datalek.", g:"AVG / persoonsgegevens", a:"Leg vast welke persoonsgegevens je verwerkt, waarom, en waar ze staan. Zonder dat overzicht kun je een datalek niet goed en op tijd melden — en dat moet binnen 72 uur."},
     {t:"Heb je afspraken met leveranciers over beveiliging en datalekken?", s:"Je websitebouwer en je boekhouder verwerken vaak jouw klantgegevens.", g:"Leveranciers", a:"Leg per leverancier vast wie waarvoor verantwoordelijk is en binnen hoeveel tijd zij een incident melden."},
     {t:"Is er een plan voor als het misgaat — wie belt wie, en hoe snel?", s:"Op het moment zelf is er geen tijd om dit te bedenken.", g:"Incidentplan", a:"Schrijf één A4: wie beslist, wie belt de klanten, wie de verzekeraar, en binnen welke termijn. Meer is het niet."}
   ];
@@ -642,6 +643,9 @@ footer{border-top:1px solid var(--line);padding-block:1.8rem;display:flex;justif
     document.getElementById('qs').style.display = '';
     document.getElementById('foot').style.display = '';
     document.getElementById('result').classList.remove('on');
+    document.getElementById('ring').style.setProperty('--deg','0deg');
+    document.getElementById('pct').innerHTML = '0<i>%</i>';
+    document.getElementById('gaps').innerHTML = '';
     update();
     document.getElementById('check').scrollIntoView({block:'start'});
   });
