@@ -104,10 +104,35 @@
 })();
 
 (function(){
+  var els = [].slice.call(document.querySelectorAll('.reveal'));
+  if (!els.length) return;
+
+  function inBeeld(el){
+    var r = el.getBoundingClientRect();
+    return r.top < window.innerHeight && r.bottom > 0;
+  }
+  function direct(el){ el.classList.add('instant', 'in'); }
+
+  // Wat al in beeld staat bij het laden (ook na een sprong via #anker)
+  // verschijnt meteen, zonder fade. Anders zie je een donker vlak.
+  els.filter(inBeeld).forEach(direct);
+
   var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:.1});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    es.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 15% 0px' });   // iets eerder dan de vouw
+
+  els.forEach(function(el){ if (!el.classList.contains('in')) io.observe(el); });
+
+  // Na een ankersprong staat er ineens ander materiaal in beeld.
+  window.addEventListener('hashchange', function(){
+    setTimeout(function(){
+      els.forEach(function(el){
+        if (!el.classList.contains('in') && inBeeld(el)){ direct(el); io.unobserve(el); }
+      });
+    }, 0);
+  });
 })();
 
 
